@@ -6,4 +6,8 @@ After the instructor advisor for the project merges the pull requests, coding ma
 
 Example of embedded image in Markdown in README.md:
 
-![](readme_assets/images/wireframe_example.jpg)
+![](readme_assets/images/Cookbook_page.png)
+![](readme_assets/images/HOMEPAGE_SCROLLDOWN_V2.png)
+![](readme_assets/images/HOMEPAGE_V3.png)
+![](readme_assets/images/HOMEPAGE_VIEW_ALL_V1)
+![](readme_assets/images/Recipe_detail.png)
