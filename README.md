@@ -1,13 +1,12 @@
 ## C33 Pitch Day Projects
 
-Begin by issuing pull requests for the first two issues in this repository.
-
-After the instructor advisor for the project merges the pull requests, coding may begin on the project.
-
-Example of embedded image in Markdown in README.md:
-
+Cookbook page - favorite recipes
 ![](readme_assets/images/Cookbook_page.png)
-![](readme_assets/images/HOMEPAGE_SCROLLDOWN_V2.png)
-![](readme_assets/images/HOMEPAGE_V3.png)
+Home page top view
 ![](readme_assets/images/HOMEPAGE_VIEW_ALL_V1.png)
+Home page middle view
+![](readme_assets/images/HOMEPAGE_SCROLLDOWN_V2.png)
+Home page bottom view
+![](readme_assets/images/HOMEPAGE_V3.png)
+Recipe detail page
 ![](readme_assets/images/Recipe_detail.png)
