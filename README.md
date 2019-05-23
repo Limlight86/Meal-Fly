@@ -12,7 +12,7 @@ Home page middle view:
 
 ![](readme_assets/images/HOMEPAGE_SCROLLDOWN_V2.png)
 
-Home page bottom view:
+Home page view-all view:
 
 ![](readme_assets/images/HOMEPAGE_VIEW_ALL_V1.png)
 
