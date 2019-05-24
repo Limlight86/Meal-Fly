@@ -23,3 +23,5 @@ Recipe detail page:
 ERD:
 
 ![](readme_assets/images/Mealfly_ERD.jpg)
+
+**NOTE** You will need to store the recipe video inside the instructions in the rich text... Since you want to use the image in multiple places, you should store it separately using ActiveStorage.
