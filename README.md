@@ -19,3 +19,7 @@ Home page view-all view:
 Recipe detail page:
 
 ![](readme_assets/images/Recipe_detail.png)
+
+ERD:
+
+![](readme_assets/images/Mealfly_ERD.jpg)
