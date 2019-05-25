@@ -9,15 +9,24 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new
+    @categories = Category.all
   end
 
   def create
     @recipe = Recipe.new(recipe_params)
+    params[:recipe][:categories].reject!(&:empty?).each do |category| 
+      RecipeCategory.create(recipe: @recipe, category: Category.find(category.to_i))
+    end
+    if @recipe.save
+      redirect_to @recipe
+    else
+      render 'new'
+    end
   end
 
   private
   def recipe_params
-    params.require(:recipe).permit(:name, :servings, :difficulty, :calories, :carbs, :protein, :fat, :sugar, :fiber, :vegeterian, :gluten_free, :image_url)
+    params.require(:recipe).permit(:name, :servings, :difficulty, :calories, :carbs, :protein, :fat, :sugar, :fiber, :vegan, :gluten_free, :image_url, :categories)
   end
 
 end

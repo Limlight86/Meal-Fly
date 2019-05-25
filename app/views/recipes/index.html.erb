@@ -15,6 +15,7 @@
       <th>Vegan</th>
       <th>Gluten Free</th>
       <th>Image Url</th>
+      <th>Categories</th>
     </tr>
   </thead>
   <tbody>
@@ -32,6 +33,7 @@
         <td><%= recipe.vegan %></td>
         <td><%= recipe.gluten_free %></td>
         <td><%= recipe.image_url %></td>
+        <td><%= recipe.categories.pluck(:name).join(", ") %></td>
       </tr>
     <% end %>
   </tbody>

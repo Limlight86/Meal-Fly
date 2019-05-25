@@ -1,0 +1,91 @@
+<%= form_with(model: @recipe, local: true) do |form| %>
+  
+  <% if @recipe.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@recipe.errors.count, "error") %> 
+        prohibited this article from being saved:
+      </h2>
+      <ul>
+        <% @recipe.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <p>
+    <%= form.label :recipe_name %><br>
+    <%= form.text_field :name, autocomplete: "off" %>
+  </p>
+
+  <p> Select categroies, hold CMD/ctrl to select multiple <br>
+  <%= form.select(:categories, options_from_collection_for_select( @categories, 'id', 'name'), {},  {multiple: true}) %>
+  </p>
+  
+  <p>
+    <%= form.label :servings%><br>
+    <%= form.number_field :servings, value: nil, min: 1%>
+  </p>
+
+  <p>
+    <%= form.label :difficulty%><br>
+    <%= form.number_field :difficulty, value: nil, min: 1%>
+  </p>
+
+  <p>
+    <%= form.label :calories%><br>
+    <%= form.number_field :calories, value: nil, min: 0%>
+  </p>
+
+  <p>
+    <%= form.label :carbs%><br>
+    <%= form.number_field :carbs, value: nil, min: 0%>
+  </p>
+
+  <p>
+    <%= form.label :protein%><br>
+    <%= form.number_field :protein, value: nil, min: 0%>
+  </p>
+
+  <p>
+    <%= form.label :fat%><br>
+    <%= form.number_field :fat, value: nil, min: 0%>
+  </p>
+
+  <p>
+    <%= form.label :sugar%><br>
+    <%= form.number_field :sugar, value: nil, min: 0%>
+  </p>
+
+  <p>
+    <%= form.label :fiber%><br>
+    <%= form.number_field :fiber, value: nil, min: 0%>
+  </p>
+
+  <p>
+    <%= form.label :vegan%><br>
+    <%= form.check_box :vegan%>
+  </p>
+
+  <p>
+    <%= form.label :gluten_free%><br>
+    <%= form.check_box :gluten_free%>
+  </p>
+
+  <p>
+    <%= form.label :image_url%><br>
+    <%= form.text_field :image_url, autocomplete: "off" %>
+  </p>
+
+  <p>
+    <%= form.label :recipe_details %>
+    <%= form.rich_text_area :recipe_details %>
+    <%= form.submit "Save" %>
+  </p>
+ 
+  <p>
+    <%= form.submit %>
+  </p>
+ 
+<% end %>
