@@ -1,0 +1,5 @@
+<%= form_with(model: @recipe, local: true) do |form| %>
+  <%= form.label :content %>
+  <%= form.rich_text_area :content %>
+  <%= form.submit "Save" %>
+<% end %>

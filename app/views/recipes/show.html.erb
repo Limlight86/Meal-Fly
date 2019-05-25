@@ -1,0 +1,36 @@
+<h1><%= @recipe.name %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Servings</th>
+      <th>Difficulty</th>
+      <th>Calories</th>
+      <th>Carbs</th>
+      <th>Protein</th>
+      <th>Fat</th>
+      <th>Sugar</th>
+      <th>Fiber</th>
+      <th>Vegan</th>
+      <th>Gluten Free</th>
+      <th>Image Url</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><%= @recipe.name %></td>
+        <td><%= @recipe.servings %></td>
+        <td><%= @recipe.difficulty %></td>
+        <td><%= @recipe.calories %></td>
+        <td><%= @recipe.carbs %></td>
+        <td><%= @recipe.protein %></td>
+        <td><%= @recipe.fat %></td>
+        <td><%= @recipe.sugar%></td>
+        <td><%= @recipe.fiber %></td>
+        <td><%= @recipe.vegan %></td>
+        <td><%= @recipe.gluten_free %></td>
+        <td><%= @recipe.image_url %></td>
+      </tr>
+  </tbody>
+</table>
