@@ -1,3 +1,9 @@
+<% if notice %>
+      <div>
+        <%= notice %>
+      </div>
+    <% end %>
+    
 <h1>Recipes table</h1>
 
 <table>
@@ -34,6 +40,9 @@
         <td><%= recipe.gluten_free %></td>
         <td><%= recipe.image_url %></td>
         <td><%= recipe.categories.pluck(:name).join(", ") %></td>
+        <td><%= link_to 'Destroy', recipe_path(recipe),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
