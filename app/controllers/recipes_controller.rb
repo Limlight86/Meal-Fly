@@ -24,6 +24,27 @@ class RecipesController < ApplicationController
     end
   end
 
+  def edit
+    @recipe = Recipe.find(params[:id])
+    @categories = Category.all
+  end
+
+  def update
+    @recipe = Recipe.find(params[:id])
+    @categories = Category.all
+    categories = params[:recipe][:categories].reject!(&:empty?)
+    @recipe.recipe_categories.destroy_all if !categories.empty?
+    categories.each do |category| 
+      RecipeCategory.create(recipe: @recipe, category: Category.find(category.to_i))
+    end
+   
+    if @recipe.update(recipe_params)
+      redirect_to @recipe, notice: "Recipe was successfully updated"
+    else
+      render 'edit'
+    end
+  end
+
   def destroy
     @recipe = Recipe.find(params[:id])
     @recipe.destroy
@@ -33,7 +54,7 @@ class RecipesController < ApplicationController
 
   private
   def recipe_params
-    params.require(:recipe).permit(:name, :servings, :difficulty, :calories, :carbs, :protein, :fat, :sugar, :fiber, :vegan, :gluten_free, :image_url, :categories, :recipe_details)
+    params.require(:recipe).permit(:name, :servings, :difficulty, :calories, :carbs, :protein, :fat, :sugar, :fiber, :vegan, :gluten_free, :image_url, :categories, :recipe_details, :recipe)
   end
 
 end

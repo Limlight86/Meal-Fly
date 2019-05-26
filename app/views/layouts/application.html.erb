@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>C33AdrianJevonLazaroYujailec</title>
+    <title>MealFly Admin</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -12,8 +12,10 @@
   <body>
   <body>
     <nav>
-      <%= link_to "All recipes", "/recipes", {}%>
-      <%= link_to "New Recipe", "/recipes/new", {}%>
+      <%= link_to "All recipes", "/recipes", {}%> || 
+      <%= link_to "New Recipe", "/recipes/new", {}%> || 
+      <%= link_to "All categories", "/categories", {}%> || 
+      <%= link_to "New Category", "/categories/new", {}%>
     </nav>
     <%= yield %>
   </body>
