@@ -16,6 +16,7 @@ categories.each { |category| Category.create(category) }
 
 eggs = Recipe.create(
                name: "Fried Eggs",
+               cooktime: 10,
                servings: 4,
                difficulty: 1,
                calories: 94,
@@ -26,11 +27,13 @@ eggs = Recipe.create(
                fiber: 0,
                vegan: false,
                gluten_free: true,
-               image_url: "https://i.stack.imgur.com/ZuAmS.jpg"
+               image_url: "https://i.stack.imgur.com/ZuAmS.jpg",
+               video_url: "https://i.stack.imgur.com/ZuAmS.mp4"
 )
 
 arroz_pollo = Recipe.create(
                 name: "Arroz con Pollo",
+                cooktime: 60,
                 servings: 4,
                 difficulty: 2,
                 calories: 430,
@@ -41,7 +44,8 @@ arroz_pollo = Recipe.create(
                 fiber: 2,
                 vegan: false,
                 gluten_free: true,
-                image_url: "https://www.dinneratthezoo.com/wp-content/uploads/2015/05/arroz-con-pollo-4.jpg"
+                image_url: "https://www.dinneratthezoo.com/wp-content/uploads/2015/05/arroz-con-pollo-4.jpg",
+                video_url: "https://www.dinneratthezoo.com/wp-content/uploads/2015/05/arroz-con-pollo-4.mp4"
 )
 
 RecipeCategory.create(recipe_id: eggs.id, category_id: Category.comfort_food.id)

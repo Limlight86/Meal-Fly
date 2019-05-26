@@ -29,6 +29,11 @@
   </p>
 
   <p>
+    <%= form.label :cook_time%><br>
+    <%= form.number_field :cooktime, value: nil, min: 1%>
+  </p>
+
+  <p>
     <%= form.label :difficulty%><br>
     <%= form.number_field :difficulty, value: nil, min: 1%>
   </p>
@@ -76,6 +81,11 @@
   <p>
     <%= form.label :image_url%><br>
     <%= form.text_field :image_url, autocomplete: "off" %>
+  </p>
+
+  <p>
+    <%= form.label :video_url%><br>
+    <%= form.text_field :video_url, autocomplete: "off" %>
   </p>
 
   <p>
