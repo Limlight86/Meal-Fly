@@ -22,14 +22,13 @@
       <th>Gluten Free</th>
       <th>Image Url</th>
       <th>Categories</th>
-      <th>Content</th>
       <th>Delete?</th>
     </tr>
   </thead>
   <tbody>
     <% @recipes.each do |recipe| %>
       <tr>
-        <td><%= recipe.name %></td>
+        <td><%= link_to recipe.name, recipe_path(recipe)%></td>
         <td><%= recipe.servings %></td>
         <td><%= recipe.difficulty %></td>
         <td><%= recipe.calories %></td>
@@ -42,7 +41,6 @@
         <td><%= recipe.gluten_free %></td>
         <td><%= recipe.image_url %></td>
         <td><%= recipe.categories.pluck(:name).join(", ") %></td>
-        <td><%= recipe.recipe_details %></td>
         <td><%= link_to 'Destroy', recipe_path(recipe),
               method: :delete,
               data: { confirm: 'Are you sure?' } %></td>

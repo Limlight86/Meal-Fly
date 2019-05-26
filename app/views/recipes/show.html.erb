@@ -22,7 +22,6 @@
       <th>Gluten Free</th>
       <th>Image Url</th>
       <th>Categories</th>
-      <th>Content</th> 
     </tr>
   </thead>
   <tbody>
@@ -40,7 +39,11 @@
         <td><%= @recipe.gluten_free %></td>
         <td><%= @recipe.image_url %></td>
         <td><%= @recipe.categories.pluck(:name).join(", ") %></td>    
-        <td><%= @recipe.recipe_details %></td>
       </tr>
   </tbody>
 </table>
+
+<p>
+  Recipe Details
+  <%= @recipe.recipe_details %>
+</p>
