@@ -4,7 +4,7 @@
     <div id="error_explanation">
       <h2>
         <%= pluralize(@recipe.errors.count, "error") %> 
-        prohibited this article from being saved:
+        prohibited this recipe from being saved:
       </h2>
       <ul>
         <% @recipe.errors.full_messages.each do |msg| %>
@@ -81,7 +81,6 @@
   <p>
     <%= form.label :recipe_details %>
     <%= form.rich_text_area :recipe_details %>
-    <%= form.submit "Save" %>
   </p>
  
   <p>

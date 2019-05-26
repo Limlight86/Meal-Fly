@@ -3,7 +3,7 @@
         <%= notice %>
       </div>
     <% end %>
-    
+
 <h1><%= @recipe.name %></h1>
 
 <table>
@@ -22,6 +22,7 @@
       <th>Gluten Free</th>
       <th>Image Url</th>
       <th>Categories</th>
+      <th>Content</th> 
     </tr>
   </thead>
   <tbody>
@@ -38,7 +39,8 @@
         <td><%= @recipe.vegan %></td>
         <td><%= @recipe.gluten_free %></td>
         <td><%= @recipe.image_url %></td>
-        <td><%= @recipe.categories.pluck(:name).join(", ") %></td>      
+        <td><%= @recipe.categories.pluck(:name).join(", ") %></td>    
+        <td><%= @recipe.recipe_details %></td>
       </tr>
   </tbody>
 </table>
