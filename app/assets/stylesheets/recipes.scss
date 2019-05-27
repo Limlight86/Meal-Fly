@@ -1,4 +1,17 @@
+.admin_table, th, td {
+  border: 1px solid black;
+}
 
-// Place all the styles related to the Recipes controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.admin_table {
+  border-collapse: collapse;
+  text-align: center;
+  width: 100%
+}
+
+.admin_table, th, td {
+  border: 1px solid black;
+}
+
+th {
+  height: 50px;
+}

@@ -1,4 +1,4 @@
-class RecipesController < ApplicationController
+class RecipesController < ApplicationController 
   def index
     @recipes = Recipe.all
   end
@@ -49,7 +49,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     @recipe.destroy
    
-    redirect_to '/recipes', notice: 'Recipe was successfully destroyed.'
+    redirect_to recipes_url, notice: 'Recipe was successfully destroyed.'
   end
 
   private

@@ -1,20 +1,14 @@
-<% if notice %>
-      <div>
-        <%= notice %>
-      </div>
-    <% end %>
-
 <h1><%= @category.name %></h1>
 
-<table>
+<table class="admin_table">
   <thead>
     <tr>
       <th>Name</th>
     </tr>
   </thead>
   <tbody>
-      <tr>
-        <td><%= @category.name %></td>  
-      </tr>
+    <tr>
+      <td><%= @category.name %></td>  
+    </tr>
   </tbody>
 </table>

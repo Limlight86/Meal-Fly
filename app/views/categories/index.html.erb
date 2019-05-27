@@ -1,12 +1,6 @@
-<% if notice %>
-      <div>
-        <%= notice %>
-      </div>
-    <% end %>
-
 <h1>Categories table</h1>
 
-<table>
+<table class="admin_table">
   <thead>
     <tr>
       <th>Name</th>
@@ -20,8 +14,8 @@
         <td><%= link_to category.name, category_path(category)%></td>
         <td><%= link_to 'Edit', edit_category_path(category) %></td>
         <td><%= link_to 'Destroy', category_path(category),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
