@@ -48,9 +48,9 @@ arroz_pollo = Recipe.create(
   video_url:    "https://www.dinneratthezoo.com/wp-content/uploads/2015/05/arroz-con-pollo-4.mp4"
 )
 
-RecipeCategory.create(recipe_id: eggs.id, category_id: Category.comfort_food.id)
-RecipeCategory.create(recipe_id: arroz_pollo.id, category_id: Category.comfort_food.id)
-RecipeCategory.create(recipe_id: arroz_pollo.id, category_id: Category.latin.id)
+RecipeCategory.create(recipe_id: eggs.id, category_id: Category.find_by(name: "comfort food").id)
+RecipeCategory.create(recipe_id: arroz_pollo.id, category_id: Category.find_by(name: "comfort food").id)
+RecipeCategory.create(recipe_id: arroz_pollo.id, category_id: Category.find_by(name: "latin").id)
 
 puts "#{Recipe.count} recipes and"
 puts "#{Category.count} categories and"
