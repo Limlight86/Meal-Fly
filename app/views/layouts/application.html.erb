@@ -18,8 +18,13 @@
     </nav>
     
     <% if notice %>
-      <div>
+      <div id="notice">
         <%= notice %>
+      </div>
+    <% end %>
+    <% if alert %>
+      <div id="alert">
+        <%= alert %>
       </div>
     <% end %>
 

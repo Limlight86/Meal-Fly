@@ -10,8 +10,6 @@ class CreateRecipes < ActiveRecord::Migration[6.0]
       t.integer :fat
       t.integer :sugar
       t.integer :fiber
-      t.boolean :vegan
-      t.boolean :gluten_free
       t.string :image_url
 
       t.timestamps

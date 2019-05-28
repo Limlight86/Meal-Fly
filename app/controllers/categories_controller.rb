@@ -17,7 +17,7 @@ class CategoriesController < ApplicationController
     if @category.save
       redirect_to @category, notice: "Category was successfully created"
     else
-      render 'new'
+      redirect_to new_category_url, alert: @category.errors.full_messages.to_sentence
     end
   end
 
@@ -28,7 +28,7 @@ class CategoriesController < ApplicationController
     if @category.update(category_params)
       redirect_to @category, notice: "Category was successfully updated"
     else
-      render 'edit'
+      redirect_to edit_category_url(@category), alert: @category.errors.full_messages.to_sentence
     end
   end
 

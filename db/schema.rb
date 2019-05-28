@@ -68,12 +68,10 @@ ActiveRecord::Schema.define(version: 2019_05_26_224008) do
     t.integer "fat"
     t.integer "sugar"
     t.integer "fiber"
-    t.boolean "vegan"
-    t.boolean "gluten_free"
     t.string "image_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "cooktime"
+    t.integer "cook_time"
     t.string "video_url"
   end
 

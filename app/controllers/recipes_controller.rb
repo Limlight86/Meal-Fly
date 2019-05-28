@@ -19,7 +19,7 @@ class RecipesController < ApplicationController
     if @recipe.save
       redirect_to @recipe, notice: "Recipe was successfully created"
     else
-      render 'new'
+      redirect_to new_recipe_url, alert: @recipe.errors.full_messages.to_sentence
     end
   end
 
@@ -32,7 +32,7 @@ class RecipesController < ApplicationController
     if @recipe.update(recipe_params)
       redirect_to @recipe, notice: "Recipe was successfully updated"
     else
-      render 'edit'
+      redirect_to edit_recipe_url(@recipe), alert: @recipe.errors.full_messages.to_sentence
     end
   end
 
@@ -57,6 +57,21 @@ class RecipesController < ApplicationController
   end
 
   def recipe_params
-    params.require(:recipe).permit(:name, :servings, :difficulty, :calories, :carbs, :protein, :fat, :sugar, :fiber, :vegan, :gluten_free, :image_url, :recipe_details, :recipe, :video_url, :cooktime)
+    params.require(:recipe)
+      .permit(
+        :name,
+        :servings,
+        :difficulty,
+        :calories,
+        :carbs,
+        :protein,
+        :fat,
+        :sugar, 
+        :fiber,
+        :image_url, 
+        :recipe_details,
+        :video_url,
+        :cook_time
+      )
   end
 end

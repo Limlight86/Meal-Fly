@@ -13,58 +13,49 @@
   </p>
   
   <p>
-    <%= form.label :servings%><br>
-    <%= form.number_field :servings, value: nil, min: 1%>
+    <%= form.label :servings, "Serves" %><br>
+    <%= form.number_field :servings, min: 1, max: 25 %>
   </p>
 
   <p>
-    <%= form.label :cook_time%><br>
-    <%= form.number_field :cooktime, value: nil, min: 1%>
+    <%= form.label :cook_time, "Cook Time (minutes)" %><br>
+    <%= form.number_field :cook_time, min: 1, max: 600 %>
   </p>
 
   <p>
-    <%= form.label :difficulty%><br>
-    <%= form.number_field :difficulty, value: nil, min: 1%>
+    <%= form.label :difficulty %><br>
+    <%= form.select :difficulty,
+        options_for_select(Recipe.difficulties.map {|k, v| [k.humanize.capitalize, k]}) %>
   </p>
 
   <p>
     <%= form.label :calories%><br>
-    <%= form.number_field :calories, value: nil, min: 0%>
+    <%= form.number_field :calories, min: 0%>
   </p>
 
   <p>
     <%= form.label :carbs%><br>
-    <%= form.number_field :carbs, value: nil, min: 0%>
+    <%= form.number_field :carbs, min: 0%>
   </p>
 
   <p>
     <%= form.label :protein%><br>
-    <%= form.number_field :protein, value: nil, min: 0%>
+    <%= form.number_field :protein, min: 0%>
   </p>
 
   <p>
     <%= form.label :fat%><br>
-    <%= form.number_field :fat, value: nil, min: 0%>
+    <%= form.number_field :fat, min: 0%>
   </p>
 
   <p>
     <%= form.label :sugar%><br>
-    <%= form.number_field :sugar, value: nil, min: 0%>
+    <%= form.number_field :sugar, min: 0%>
   </p>
 
   <p>
     <%= form.label :fiber%><br>
-    <%= form.number_field :fiber, value: nil, min: 0%>
-  </p>
-
-  <p>
-    <%= form.label :vegan%><br>
-    <%= form.check_box :vegan%>
-  </p>
-
-  <p>
-    <%= form.label :gluten_free%><br>
-    <%= form.check_box :gluten_free%>
+    <%= form.number_field :fiber, min: 0%>
   </p>
 
   <p>

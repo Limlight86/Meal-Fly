@@ -1,45 +1,6 @@
 <h1><%= @recipe.name %></h1>
 
-<table class="admin_table">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Cook Time</th>
-      <th>Servings</th>
-      <th>Difficulty</th>
-      <th>Calories</th>
-      <th>Carbs</th>
-      <th>Protein</th>
-      <th>Fat</th>
-      <th>Sugar</th>
-      <th>Fiber</th>
-      <th>Vegan</th>
-      <th>Gluten Free</th>
-      <th>Image Url</th>
-      <th>Video Url</th>
-      <th>Categories</th>
-    </tr>
-  </thead>
-  <tbody>
-      <tr>
-        <td><%= @recipe.name %></td>
-        <td><%= @recipe.cooktime %> min</td>
-        <td><%= @recipe.servings %></td>
-        <td><%= @recipe.difficulty %></td>
-        <td><%= @recipe.calories %></td>
-        <td><%= @recipe.carbs %>g</td>
-        <td><%= @recipe.protein %>g</td>
-        <td><%= @recipe.fat %>g</td>
-        <td><%= @recipe.sugar%>g</td>
-        <td><%= @recipe.fiber %>g</td>
-        <td><%= @recipe.vegan %></td>
-        <td><%= @recipe.gluten_free %></td>
-        <td><%= @recipe.image_url %></td>
-        <td><%= @recipe.video_url %></td>
-        <td><%= @recipe.categories.pluck(:name).join(", ") %></td>    
-      </tr>
-  </tbody>
-</table>
+<%= render 'recipe_table', recipes: [@recipe] %>
 
 <p>
   Recipe Details
