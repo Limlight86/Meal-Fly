@@ -1,0 +1,10 @@
+<%= form_with(model: @category, local: true) do |form| %> 
+  <p>
+    <%= form.label :category_name %><br>
+    <%= form.text_field :name, autocomplete: "off" %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+
+<% end %>

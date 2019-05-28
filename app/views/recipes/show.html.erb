@@ -1,0 +1,8 @@
+<h1><%= @recipe.name %></h1>
+
+<%= render 'recipe_table', recipes: [@recipe] %>
+
+<p>
+  Recipe Details
+  <%= @recipe.recipe_details %>
+</p>

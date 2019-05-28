@@ -1,0 +1,48 @@
+<table class="admin_table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Cook Time</th>
+      <th>Servings</th>
+      <th>Difficulty</th>
+      <th>Calories</th>
+      <th>Carbs</th>
+      <th>Protein</th>
+      <th>Fat</th>
+      <th>Sugar</th>
+      <th>Fiber</th>
+      <th>Image Url</th>
+      <th>Video Url</th>
+      <th>Categories</th>
+      <th>Edit</th>
+      <th>Destroy</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% recipes.each do |recipe| %>
+      <tr>
+        <td>
+          <% if recipes.size > 1 %>
+            <%= link_to recipe.name, recipe %>
+          <% else %>
+            <%= recipe.name %>
+          <% end %>
+        </td>
+        <td><%= recipe.cook_time %> min</td>
+        <td><%= recipe.servings %></td>
+        <td><%= recipe.difficulty %></td>
+        <td><%= recipe.calories %></td>
+        <td><%= recipe.carbs %>g</td>
+        <td><%= recipe.protein %>g</td>
+        <td><%= recipe.fat %>g</td>
+        <td><%= recipe.sugar%>g</td>
+        <td><%= recipe.fiber %>g</td>
+        <td><%= recipe.image_url %></td>
+        <td><%= recipe.video_url %></td>
+        <td><%= recipe.categories.pluck(:name).join(", ") %></td>
+        <td><%= link_to "Edit", edit_recipe_path(recipe) %></td>
+        <td><%= link_to "Destroy", recipe, method: :delete, data: { confirm: "Are you sure?" } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
