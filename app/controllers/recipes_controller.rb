@@ -70,7 +70,7 @@ class RecipesController < ApplicationController
         :sugar,
         :fiber,
         :recipe_details,
-        :video_url,
+        :video,
         :cook_time,
         :image
       )

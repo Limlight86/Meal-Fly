@@ -26,7 +26,6 @@ eggs = Recipe.create(
   fat:            5,
   sugar:          0,
   fiber:          0,
-  video_url:      "https://i.stack.imgur.com/ZuAmS.mp4",
   recipe_details: "Cook the food....doesnt get much easier than this!"
 )
 
@@ -41,7 +40,6 @@ arroz_pollo = Recipe.create(
   fat:            16,
   sugar:          1,
   fiber:          2,
-  video_url:      "https://www.dinneratthezoo.com/wp-content/uploads/2015/05/arroz-con-pollo-4.mp4",
   recipe_details: "Cook the food. Comer la comida!"
 )
 
@@ -56,7 +54,6 @@ ramen = Recipe.create(
   fat:            33,
   sugar:          3,
   fiber:          10,
-  video_url:      "https://www.ramenVid.mp4",
   recipe_details: "Cook the food, Enjoy the food! Slurp it down!"
 )
 
@@ -71,7 +68,6 @@ lasgna = Recipe.create(
   fat:            34,
   sugar:          14,
   fiber:          5,
-  video_url:      "https://www.lasgna.mp4",
   recipe_details: "Cook the food, Enjoy the food!...Thats alot of pasta!"
 )
 
@@ -86,7 +82,6 @@ tofu_nuggets = Recipe.create(
   fat:            22,
   sugar:          1,
   fiber:          2,
-  video_url:      "https://www.tofu.mp4",
   recipe_details: "Cook the food, Enjoy the food!...These look real good!"
 )
 
@@ -101,7 +96,6 @@ cinnamon_rolls = Recipe.create(
   fat:            19,
   sugar:          28,
   fiber:          5,
-  video_url:      "https://www.cinnamonrolls.mp4",
   recipe_details: "Cook the food, Enjoy the food!...No animals were harmed in the making of this recipe!"
 )
 

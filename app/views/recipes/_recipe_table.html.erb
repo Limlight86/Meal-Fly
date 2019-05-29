@@ -12,7 +12,7 @@
       <th>Sugar</th>
       <th>Fiber</th>
       <th>Image</th>
-      <th>Video Url</th>
+      <th>Video</th>
       <th>Categories</th>
       <th>Edit</th>
       <th>Destroy</th>
@@ -38,11 +38,15 @@
         <td><%= recipe.sugar%>g</td>
         <td><%= recipe.fiber %>g</td>
         <td>
-          <% if @recipe.image.attached? %>
-            <%= image_tag @recipe.image.variant(resize_to_limit: [100, 100]), class: "recipe_image" %>
+          <% if recipe.image.attached? %>
+            <%= image_tag recipe.image.variant(resize_to_limit: [100, 100]), class: "recipe_image" %>
           <% end %>
         </td>
-        <td><%= recipe.video_url %></td>
+        <td>
+          <% if recipe.video.attached? %>
+            <%= video_tag url_for(recipe.video), class: "recipe_video", controls:''  %>
+          <% end %>
+        </td>
         <td><%= recipe.categories.pluck(:name).join(", ") %></td>
         <td><%= link_to "Edit", edit_recipe_path(recipe) %></td>
         <td><%= link_to "Destroy", recipe, method: :delete, data: { confirm: "Are you sure?" } %></td>
