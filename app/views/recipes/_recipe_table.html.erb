@@ -37,7 +37,11 @@
         <td><%= recipe.fat %>g</td>
         <td><%= recipe.sugar%>g</td>
         <td><%= recipe.fiber %>g</td>
-        <td><%= recipe.image %></td>
+        <td>
+          <% if @recipe.image.attached? %>
+            <%= image_tag @recipe.image.variant(resize_to_limit: [100, 100]), class: "recipe_image" %>
+          <% end %>
+        </td>
         <td><%= recipe.video_url %></td>
         <td><%= recipe.categories.pluck(:name).join(", ") %></td>
         <td><%= link_to "Edit", edit_recipe_path(recipe) %></td>

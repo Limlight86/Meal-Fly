@@ -6,7 +6,6 @@ class RecipesController < ApplicationController
   end
 
   def show
-    @recipe.image.attach(params[:image])
   end
 
   def new
@@ -69,7 +68,7 @@ class RecipesController < ApplicationController
         :protein,
         :fat,
         :sugar,
-        :fiber, 
+        :fiber,
         :recipe_details,
         :video_url,
         :cook_time,
