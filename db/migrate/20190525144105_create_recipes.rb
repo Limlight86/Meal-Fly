@@ -10,7 +10,6 @@ class CreateRecipes < ActiveRecord::Migration[6.0]
       t.integer :fat
       t.integer :sugar
       t.integer :fiber
-      t.string :image_url
 
       t.timestamps
     end

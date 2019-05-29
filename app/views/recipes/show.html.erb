@@ -2,6 +2,10 @@
 
 <%= render 'recipe_table', recipes: [@recipe] %>
 
+<%= if @recipe.image.attached? %>
+<img src="<%= (url_for(@recipe.image))%>">
+<% end %>
+
 <p>
   Recipe Details
   <%= @recipe.recipe_details %>

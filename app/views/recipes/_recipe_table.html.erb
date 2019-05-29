@@ -11,7 +11,7 @@
       <th>Fat</th>
       <th>Sugar</th>
       <th>Fiber</th>
-      <th>Image Url</th>
+      <th>Image</th>
       <th>Video Url</th>
       <th>Categories</th>
       <th>Edit</th>
@@ -37,7 +37,7 @@
         <td><%= recipe.fat %>g</td>
         <td><%= recipe.sugar%>g</td>
         <td><%= recipe.fiber %>g</td>
-        <td><%= recipe.image_url %></td>
+        <td><%= recipe.image %></td>
         <td><%= recipe.video_url %></td>
         <td><%= recipe.categories.pluck(:name).join(", ") %></td>
         <td><%= link_to "Edit", edit_recipe_path(recipe) %></td>

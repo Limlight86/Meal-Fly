@@ -6,11 +6,13 @@ class RecipesController < ApplicationController
   end
 
   def show
+    @recipe.image.attach(params[:image])
   end
 
   def new
     @recipe = Recipe.new
     @categories = Category.all
+    
   end
 
   def create
@@ -66,12 +68,12 @@ class RecipesController < ApplicationController
         :carbs,
         :protein,
         :fat,
-        :sugar, 
-        :fiber,
-        :image_url, 
+        :sugar,
+        :fiber, 
         :recipe_details,
         :video_url,
-        :cook_time
+        :cook_time,
+        :image
       )
   end
 end

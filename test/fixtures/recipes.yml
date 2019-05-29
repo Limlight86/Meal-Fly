@@ -12,7 +12,6 @@ one:
   fiber: 1
   vegeterian: false
   gluten_free: false
-  image_url: MyString
 
 two:
   name: MyString
@@ -26,4 +25,3 @@ two:
   fiber: 1
   vegeterian: false
   gluten_free: false
-  image_url: MyString
