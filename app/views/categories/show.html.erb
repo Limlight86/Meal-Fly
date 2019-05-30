@@ -12,3 +12,10 @@
     </tr>
   </tbody>
 </table>
+
+<h3>Recipes in this Category</h3>
+<% @category.recipes.each do |recipe| %>
+  <p>
+    <%= link_to recipe.name, recipe %>
+  </p>
+<% end %>
