@@ -11,6 +11,7 @@ class RecipesController < ApplicationController
   def new
     @recipe = Recipe.new
     @categories = Category.all
+    
   end
 
   def create
@@ -66,12 +67,12 @@ class RecipesController < ApplicationController
         :carbs,
         :protein,
         :fat,
-        :sugar, 
+        :sugar,
         :fiber,
-        :image_url, 
         :recipe_details,
-        :video_url,
-        :cook_time
+        :video,
+        :cook_time,
+        :image
       )
   end
 end

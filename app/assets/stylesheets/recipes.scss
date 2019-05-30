@@ -15,3 +15,16 @@
 .admin_table th {
   height: 50px;
 }
+
+.recipe_image{
+  object-fit: cover;
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+}
+
+.recipe_video{
+  object-fit: cover;
+  width: 100px;
+  height: 100px;
+}
