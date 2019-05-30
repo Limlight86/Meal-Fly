@@ -6,6 +6,7 @@ ruby '2.6.3'
 gem 'hirb'
 gem 'pg'
 gem 'dotenv-rails'
+gem 'aws-sdk-s3', require: false
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.0.rc1'
