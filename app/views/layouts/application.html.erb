@@ -32,7 +32,6 @@
   </head>
 
   <body>
-    <div class='container'>
     <nav class="navbar navbar-expand-lg">
       <% if user_signed_in? %>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -62,18 +61,18 @@
         </div>
       <% end %>
     </nav>
-    <% if notice %>
-      <div id="notice">
-        <%= notice %>
-      </div>
-    <% end %>
-    <% if alert %>
-      <div id="alert">
-        <%= alert %>
-      </div>
-    <% end %>
-    <%= yield %>
+    <div class='container animated fadeIn faster'>
+      <% if notice %>
+        <div id="notice">
+          <%= notice %>
+        </div>
+      <% end %>
+      <% if alert %>
+        <div id="alert">
+          <%= alert %>
+        </div>
+      <% end %>
+      <%= yield %>
     </div>
-  </body>
-  
+  </body> 
 </html>
