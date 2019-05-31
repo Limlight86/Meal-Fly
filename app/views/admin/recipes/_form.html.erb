@@ -1,4 +1,4 @@
-<%= form_with(model: @recipe, local: true) do |form| %>
+<%= form_with(model: [:admin, @recipe], local: true) do |form| %>
   <p>
     <%= form.label :recipe_name %><br>
     <%= form.text_field :name, autocomplete: "off" %>

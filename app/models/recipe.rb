@@ -19,4 +19,6 @@ class Recipe < ApplicationRecord
             :recipe_details,
             :cook_time,
             presence: true
+
+  scope :ordered, -> { order(name: :asc) }
 end

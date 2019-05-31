@@ -1,17 +1,13 @@
 class Admin::RecipesController < Admin::BaseController
-  before_action :set_recipe, only: [:show, :edit, :update, :destroy]
+  before_action :set_recipe, only: [:edit, :update, :destroy]
 
   def index
-    @recipes = Recipe.all
-  end
-
-  def show
+    @recipes = Recipe.ordered
   end
 
   def new
     @recipe = Recipe.new
     @categories = Category.all
-    
   end
 
   def create
