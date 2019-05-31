@@ -5,8 +5,8 @@ class Admin::BaseController < ApplicationController
   private
 
   def validate_user_is_admin
-    unless current_user.admin?
-      redirect_to new_user_session_path, alert: "You must be an admin."
+    unless current_user.admin
+      return redirect_to recipes_url, alert: "You must be an admin."
     end
   end
 end
