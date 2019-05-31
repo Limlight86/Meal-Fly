@@ -2,7 +2,7 @@ module SearchableByName
     extend ActiveSupport::Concern
   
     included do
-      scope :search, -> (term) { where("name LIKE ?", "%#{term}%") }
+      scope :search, -> (term) { where("name ILIKE ?", "%#{term}%") }
     end
   
     def as_json(options={})

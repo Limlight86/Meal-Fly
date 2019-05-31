@@ -6,25 +6,22 @@ class Search extends Component {
 
   handleChange = event => {
     const term = event.target.value
-    axios.get(`/search.json?term=${term}`)
-      .then(response => {
-        this.setState({ term, results: response.data })
-      })
+    axios.get(`/search_results.json?term=${term}`)
+      .then(response => this.setState({ results: response.data }))
   }
 
   render(){
-    const { term, results } = this.state
+    const { results } = this.state
     return(
       <React.Fragment>
-        <label htmlFor="term">Search</label>
         <input
+          className="form-control mr-sm-2"
           type="search"
-          name='term'
-          value={term}
+          placeholder="Search"
           autoComplete="off"
           onChange={this.handleChange}
         />
-        { results.length > 0 && term.length > 0 &&
+        { results.length > 0 &&
           <div>
             <h3>Results</h3>
             {
