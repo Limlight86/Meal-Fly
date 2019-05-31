@@ -1,6 +1,11 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 
+const badgeClasses = {
+  'Category': 'badge badge-orange ml-2',
+  'Recipe': 'badge badge-green ml-2'
+}
+
 class Search extends Component {
   state = { term: "", results: [] }
 
@@ -22,20 +27,20 @@ class Search extends Component {
           onChange={this.handleChange}
         />
         { results.length > 0 &&
-          <div>
-            <h3>Results</h3>
+          <ul class="list-group" style={{position: 'absolute', zIndex: 10}}>
             {
               results.map((result, i) => {
                 return(
-                  <p key={i}>
+                  <li class="list-group-item" key={i}>
                     <a href={result.location}>
-                      {result.name}
+                      { result.name }
+                      <span className={badgeClasses[result.type]}>{result.type}</span>
                     </a>
-                  </p>
+                  </li>
                 )
               })
             }
-          </div>
+          </ul>
         }
       </React.Fragment>
     )

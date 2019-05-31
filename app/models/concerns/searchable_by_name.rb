@@ -7,9 +7,10 @@ module SearchableByName
   
     def as_json(options={})
       {
-        id: id,
-        name: name,
-        location: "/#{self.class.name.pluralize.downcase}/#{id}"
+        id:           id,
+        name:         name,
+        location:     "/#{self.class.name.pluralize.downcase}/#{id}",
+        type:         self.class.name
       }
     end
   end
