@@ -5,6 +5,8 @@ class Recipe < ApplicationRecord
   has_one_attached :image
   has_one_attached :video
 
+  include SearchableByName
+
   enum difficulty: { easy: 1, medium: 2, hard: 3 }
 
   validates :name,

@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   root 'recipes#index'
+  resources :search_results, only: [:index]
   resources :recipes, only: [:index, :show]
   resource :cookbook, only: [:show]
 
@@ -10,5 +11,4 @@ Rails.application.routes.draw do
     resources :recipes
     resources :categories
   end
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
