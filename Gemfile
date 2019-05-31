@@ -9,7 +9,7 @@ gem 'dotenv-rails'
 gem 'aws-sdk-s3', require: false
 gem 'devise'
 gem 'devise-bootstrap-views', '~> 1.0'
-
+gem 'react_on_rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.0.rc1'
 # Use Puma as the app server
