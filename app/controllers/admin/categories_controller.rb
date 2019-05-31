@@ -1,4 +1,4 @@
-class CategoriesController < ApplicationController
+class Admin::CategoriesController < Admin::BaseController
   before_action :set_category, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -17,7 +17,7 @@ class CategoriesController < ApplicationController
     if @category.save
       redirect_to @category, notice: "Category was successfully created"
     else
-      redirect_to new_category_url, alert: @category.errors.full_messages.to_sentence
+      redirect_to new_admin_category_url, alert: @category.errors.full_messages.to_sentence
     end
   end
 
@@ -28,7 +28,7 @@ class CategoriesController < ApplicationController
     if @category.update(category_params)
       redirect_to @category, notice: "Category was successfully updated"
     else
-      redirect_to edit_category_url(@category), alert: @category.errors.full_messages.to_sentence
+      redirect_to edit_admin_category_url(@category), alert: @category.errors.full_messages.to_sentence
     end
   end
 
