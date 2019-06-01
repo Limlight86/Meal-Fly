@@ -9,11 +9,10 @@ class UserRecipesController < ApplicationController
     @user_recipe = current_user.user_recipes.new(recipe_id: params[:recipe_id])
     if @user_recipe.save
       flash[:notice] = "Recipe was successfully added to Cookbook"
-      redirect_back fallback_location: root_path
     else
       flash[:alert] = "Recipe already in your Cookbook."
-      redirect_back fallback_location: root_path
     end
+    redirect_back fallback_location: root_path
   end
 
   def destroy
