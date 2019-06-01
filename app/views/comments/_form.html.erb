@@ -1,10 +1,11 @@
-<%= form_with(model: [@recipe, @comment], remote: true) do |form| %>
+<%= form_with(model: [recipe, comment], local: true) do |form| %>
   <div class="form-group">
     <%= form.label :comment %>
-    <%= form.text_field :content, class: "form-control" %>
+    <%= form.text_field :content, autocomplete: "off",  class: "form-control" %>
   </div>
  
   <div class="actions">
     <%= form.submit nil, class: "btn btn-primary" %>
   </div>
 <% end %>
+<br>

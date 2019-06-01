@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :set_comment, only: [:update, :destroy]
+  before_action :set_comment, only: [:destroy]
 
   def index
     @recipe = current_user.recipe.find(params[:recipe_id])
@@ -10,8 +10,7 @@ class CommentsController < ApplicationController
   end
 
   def create
-    p params
-    @comment = Comment.create(comment_params)
+    @comment = current_user.comments.build(comment_params)
     @comment.recipe_id = params[:recipe_id]
     if @comment.save
       redirect_back fallback_location: root_path, notice: 'Comment was successfuly posted.'
@@ -33,6 +32,6 @@ class CommentsController < ApplicationController
   end
 
   def comment_params
-    params.require(:category).permit(:content)
+    params.require(:comment).permit(:content)
   end
 end
