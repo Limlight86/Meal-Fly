@@ -1,0 +1,10 @@
+<%= form_with(model: [@recipe, @comment], remote: true) do |form| %>
+  <div class="form-group">
+    <%= form.label :comment %>
+    <%= form.text_field :content, class: "form-control" %>
+  </div>
+ 
+  <div class="actions">
+    <%= form.submit nil, class: "btn btn-primary" %>
+  </div>
+<% end %>

@@ -5,18 +5,10 @@
   <%= @recipe.recipe_details %>
 </p>
 
-<%= form_with(model: @comment, local: true) do |f| %>
-  <%= f.label :comment %>:
-  <p>
-    <%= f.text_area :content %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-<%end%>
+<%= render './comments/form', recipe: @recipe, comment: @comment %>
 
-<%# @recipe.comments.each do |comment| %>
+<% @recipe.comments.each do |comment| %>
   <p>
-    <%#= comment.content %></s>
-  <p>
-<%# end %>
+    <%= comment.content%>
+  </p>
+<% end %>

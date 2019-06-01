@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :set_sub_task, only: [:update, :destroy]
+  before_action :set_comment, only: [:update, :destroy]
 
   def index
     @recipe = current_user.recipe.find(params[:recipe_id])
