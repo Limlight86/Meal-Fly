@@ -1,0 +1,38 @@
+class CommentsController < ApplicationController
+  before_action :set_sub_task, only: [:update, :destroy]
+
+  def index
+    @recipe = current_user.recipe.find(params[:recipe_id])
+    @comment = Comment.new
+  end
+
+  def show
+  end
+
+  def create
+    p params
+    @comment = Comment.create(comment_params)
+    @comment.recipe_id = params[:recipe_id]
+    if @comment.save
+      redirect_back fallback_location: root_path, notice: 'Comment was successfuly posted.'
+    else
+      redirect_back fallback_location: root_path, alert: @comment.errors.full_messages.to_sentence
+    end
+  end
+
+  def destroy
+    @comment.destroy
+    redirect_back fallback_location: root_path,
+    notice: 'Comment has been removed.'
+  end
+
+  private
+
+  def set_comment
+    @comment = Comment.find(params[:id])
+  end
+
+  def comment_params
+    params.require(:category).permit(:content)
+  end
+end

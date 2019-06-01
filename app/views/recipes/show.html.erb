@@ -4,3 +4,19 @@
   Recipe Details
   <%= @recipe.recipe_details %>
 </p>
+
+<%= form_with(model: @comment, local: true) do |f| %>
+  <%= f.label :comment %>:
+  <p>
+    <%= f.text_area :content %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<%end%>
+
+<%# @recipe.comments.each do |comment| %>
+  <p>
+    <%#= comment.content %></s>
+  <p>
+<%# end %>

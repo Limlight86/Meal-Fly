@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   root 'recipes#index'
   resources :search_results, only: [:index]
-  resources :recipes, only: [:index, :show]
+  resources :recipes, only: [:index, :show] do
+    resources :comments
+  end
   resource :cookbook, only: [:show]
 
   namespace :admin do
