@@ -1,0 +1,9 @@
+<h1>Cookbook!</h1>
+
+
+<% @user_recipes.each do |user_recipe| %>
+  <p>
+    <%= link_to user_recipe.recipe.name, user_recipe.recipe%>
+    <%= link_to "Destroy", user_recipe_path(user_recipe.id), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-danger' %>
+  </p>
+<% end %>
