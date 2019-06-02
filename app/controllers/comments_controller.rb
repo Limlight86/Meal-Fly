@@ -1,5 +1,4 @@
 class CommentsController < ApplicationController
-  before_action :set_comment, only: [:destroy]
 
   def index
     @recipe = current_user.recipe.find(params[:recipe_id])
@@ -21,18 +20,18 @@ class CommentsController < ApplicationController
   def destroy
     @recipe = Recipe.find(params[:recipe_id])
     @comment = @recipe.comments.find(params[:id])
-    @comment.destroy
+    if current_user.id == @comment.user.id or current_user.admin?
+      @comment.destroy
+    else
+      redirect_back fallback_location: root_path, alert: @comment.errors.full_messages.to_sentence
+    end
     redirect_back fallback_location: root_path,
     notice: 'Comment has been removed.'
   end
 
   private
 
-  def set_comment
-    @comment = Comment.find(params[:id])
-  end
-
   def comment_params
-    params.require(:comment).permit(:content, :user, :email, :id)
+    params.require(:comment).permit(:content, :user)
   end
 end
