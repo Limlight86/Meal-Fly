@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root 'recipes#index'
   resources :search_results, only: [:index]
   resources :recipes, only: [:index, :show] do
-    resources :comments, only: [:index, :create, :destroy], shallow: true
+    resources :comments, only: [:index, :create, :destroy]
   end
   resource :cookbook, only: [:show]
 

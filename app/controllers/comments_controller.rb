@@ -3,7 +3,6 @@ class CommentsController < ApplicationController
 
   def index
     @recipe = current_user.recipe.find(params[:recipe_id])
-    @comment = Comment.new
   end
 
   def show
@@ -20,6 +19,8 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+    @recipe = Recipe.find(params[:recipe_id])
+    @comment = @recipe.comments.find(params[:id])
     @comment.destroy
     redirect_back fallback_location: root_path,
     notice: 'Comment has been removed.'
@@ -32,6 +33,6 @@ class CommentsController < ApplicationController
   end
 
   def comment_params
-    params.require(:comment).permit(:content)
+    params.require(:comment).permit(:content, :user, :email, :id)
   end
 end

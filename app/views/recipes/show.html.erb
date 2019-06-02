@@ -6,9 +6,15 @@
 </p>
 
 <%= render './comments/form', recipe: @recipe, comment: @comment %>
-
 <% @recipe.comments.each do |comment| %>
-  <p>
-    <%= comment.content %>
-    
+  <% if comment.content? %>
+    <p>
+      <%= comment.user.email%> : <%= comment.content %>
+      <% if current_user.id === comment.user.id or current_user.admin === true%>
+        <%= link_to 'Remove Comment', [@comment.recipe, comment],
+            method: :delete,
+            data: { confirm: 'Are you sure?' } %>
+      <% end %>
+    </p>
+  <% end %>
 <% end %>
