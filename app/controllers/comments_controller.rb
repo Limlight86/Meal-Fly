@@ -19,12 +19,12 @@ class CommentsController < ApplicationController
 
   def destroy
     @recipe = Recipe.find(params[:recipe_id])
-    @comment = @recipe.comments.find(params[:id])
-    if current_user.id == @comment.user.id or current_user.admin?
-      @comment.destroy
+    if current_user.admin?
+      @comment = @recipe.comments.find(params[:id])
     else
-      redirect_back fallback_location: root_path, alert: @comment.errors.full_messages.to_sentence
+      @comment = @recipe.comments.where(user: current_user).find(params[:id])
     end
+    @comment.destroy
     redirect_back fallback_location: root_path,
     notice: 'Comment has been removed.'
   end
