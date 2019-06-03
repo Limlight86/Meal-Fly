@@ -11,7 +11,7 @@
     <p>
       <%= comment.user.email%> : <%= comment.content %>
       <% if current_user.id == comment.user.id || current_user.admin?%>
-        <%= link_to 'Remove Comment', [@comment.recipe, comment],
+        <%= link_to 'Remove Comment', [@recipe, comment],
             method: :delete,
             data: { confirm: 'Are you sure?' } %>
       <% end %>
