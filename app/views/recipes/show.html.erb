@@ -22,15 +22,13 @@
   <%= @recipe.recipe_details %>
 </p>
 
-<%= render './ratings/form', recipe: @recipe, rating: @rating %>
-
-<%= render './comments/form', recipe: @recipe, comment: @comment %>
+<%= render 'comments/form', recipe: @recipe, comment: @comment %>
 <% @recipe.comments.each do |comment| %>
   <% if comment.content? %>
     <p>
       <%= comment.user.email%> : <%= comment.content %>
-      <% if current_user.id == comment.user.id or current_user.admin?%>
-        <%= link_to 'Remove Comment', [@comment.recipe, comment],
+      <% if current_user.id == comment.user.id || current_user.admin?%>
+        <%= link_to 'Remove Comment', [@recipe, comment],
             method: :delete,
             data: { confirm: 'Are you sure?' } %>
       <% end %>
