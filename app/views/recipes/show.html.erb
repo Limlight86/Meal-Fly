@@ -5,7 +5,7 @@
   <%= @recipe.recipe_details %>
 </p>
 
-<%= render './comments/form', recipe: @recipe, comment: @comment %>
+<%= render 'comments/form', recipe: @recipe, comment: @comment %>
 <% @recipe.comments.each do |comment| %>
   <% if comment.content? %>
     <p>
