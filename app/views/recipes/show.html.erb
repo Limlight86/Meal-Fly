@@ -26,7 +26,7 @@
   <%= render 'comments/form', recipe: @recipe, comment: @comment %>
 <% end %>
 
-<% @recipe.comments.each do |comment| %>
+<% @comments.each do |comment| %>
   <div class="card">
     <div class="card-body">
       <%= comment.user.email%>: <%= comment.content %>
