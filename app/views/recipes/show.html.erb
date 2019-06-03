@@ -1,7 +1,9 @@
 <h1><%= @recipe.name %></h1>
 <h3><%= @recipe.ratings.average(:score) %> stars</h3>
 
-<%= render 'ratings/form', recipe: @recipe, rating: @rating %>
+<% if user_signed_in? %>
+  <%= render 'ratings/form', recipe: @recipe, rating: @rating %>
+<% end %>
 
 <p>
   Recipe Details
@@ -12,7 +14,9 @@
 
 <h4>Comments</h4>
 
-<%= render 'comments/form', recipe: @recipe, comment: @comment %>
+<% if user_signed_in? %>
+  <%= render 'comments/form', recipe: @recipe, comment: @comment %>
+<% end %>
 
 <% @recipe.comments.each do |comment| %>
   <div class="card">
