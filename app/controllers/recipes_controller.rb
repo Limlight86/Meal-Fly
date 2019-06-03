@@ -3,7 +3,7 @@ class RecipesController < ApplicationController
   end
 
   def show
-    @recipe = Recipe.find(params[:id])
-    @comment = @recipe.comments.build
+    @recipe   = Recipe.find(params[:id])
+    @comment  = Comment.new
   end
 end
