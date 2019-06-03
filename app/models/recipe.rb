@@ -2,7 +2,7 @@ class Recipe < ApplicationRecord
   has_many :recipe_categories, dependent: :destroy
   has_many :categories, through: :recipe_categories
   has_many :comments, dependent: :destroy
-  has_many :ratings
+  has_many :ratings, dependent: :destroy
   has_rich_text :recipe_details
   has_one_attached :image
   has_one_attached :video
