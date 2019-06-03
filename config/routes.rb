@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :search_results, only: [:index]
   resources :recipes, only: [:index, :show] do
     resources :comments, only: [:index, :create, :destroy]
+    resources :ratings, only: [:index, :create, :show] 
   end
   resource :cookbook, only: [:show]
 
