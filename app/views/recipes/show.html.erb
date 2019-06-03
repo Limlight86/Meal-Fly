@@ -5,13 +5,7 @@
   <%= render 'ratings/form', recipe: @recipe, rating: @rating %>
 <% end %>
 
-<button>
-  <% if @user_recipe %>
-    <%= link_to "Remove from Cookbook", user_recipe_path(@user_recipe.id), method: 'DELETE'%>
-  <% else %>
-    <%= link_to "Add to Cookbook", user_recipes_path(params: {recipe_id: @recipe}), method: 'POST'%>
-  <% end %>
-</button>
+<%= react_component 'UserRecipe', props: { inCookbook: @in_cookbook, recipe: @recipe } %>
 
 <p>
   Recipe Details
@@ -26,7 +20,7 @@
   <%= render 'comments/form', recipe: @recipe, comment: @comment %>
 <% end %>
 
-<% @recipe.comments.each do |comment| %>
+<% @comments.each do |comment| %>
   <div class="card">
     <div class="card-body">
       <%= comment.user.email%>: <%= comment.content %>

@@ -7,9 +7,10 @@ Rails.application.routes.draw do
   resources :recipes, only: [:index, :show] do
     resources :comments, only: [:create, :destroy]
     resources :ratings, only: [:create, :update]
+    resource :user_recipe, only: [:create, :destroy]
   end
 
-  resources :user_recipes, only: [:show, :destroy, :index, :create]
+  resources :user_recipes, only: [:index]
   resources :categories, only: [:show]
 
   namespace :admin do
