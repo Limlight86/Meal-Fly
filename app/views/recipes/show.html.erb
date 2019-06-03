@@ -1,29 +1,29 @@
 <h1><%= @recipe.name %></h1>
+<h3><%= @recipe.ratings.average(:score) %> stars</h3>
 
-<p>
- Your Rating : 
- <% if @recipe.ratings.find_by(user_id: current_user.id, recipe_id: @recipe.id).present? %>
-  <%= @recipe.ratings.find_by(user_id: current_user.id, recipe_id: @recipe.id).score %> / 5
- <% else %>
-  Rate this recipe below!
-<% end %>
-</p>
+<%= render 'ratings/form', recipe: @recipe, rating: @rating %>
 
 <p>
   Recipe Details
   <%= @recipe.recipe_details %>
 </p>
 
+<hr>
+
+<h4>Comments</h4>
+
 <%= render 'comments/form', recipe: @recipe, comment: @comment %>
+
 <% @recipe.comments.each do |comment| %>
-  <% if comment.content? %>
-    <p>
-      <%= comment.user.email%> : <%= comment.content %>
+  <div class="card">
+    <div class="card-body">
+      <%= comment.user.email%>: <%= comment.content %>
       <% if current_user.id == comment.user.id || current_user.admin?%>
         <%= link_to 'Remove Comment', [@recipe, comment],
             method: :delete,
-            data: { confirm: 'Are you sure?' } %>
+            data: { confirm: 'Are you sure?' },
+            class: "float-right" %>
       <% end %>
-    </p>
-  <% end %>
+    </div>
+  </div>
 <% end %>

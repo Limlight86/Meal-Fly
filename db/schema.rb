@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 2019_06_02_222515) do
   end
 
   create_table "ratings", force: :cascade do |t|
-    t.string "score"
+    t.integer "score", default: 5, null: false
     t.bigint "user_id", null: false
     t.bigint "recipe_id", null: false
     t.datetime "created_at", precision: 6, null: false

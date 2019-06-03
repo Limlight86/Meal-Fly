@@ -1,6 +1,5 @@
 <%= form_with(model: [recipe, comment], local: true) do |form| %>
   <div class="form-group">
-    <%= form.label :comment %>
     <%= form.text_field :content, autocomplete: "off",  class: "form-control" %>
   </div>
  
@@ -8,4 +7,3 @@
     <%= form.submit nil, class: "btn btn-primary" %>
   </div>
 <% end %>
-<br>
