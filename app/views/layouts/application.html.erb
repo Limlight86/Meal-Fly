@@ -47,7 +47,7 @@
               <li class='nav-item'><%= link_to "All categories", admin_categories_url, class:'nav-link'%> </li>
               <li class='nav-item'><%= link_to "New Category", new_admin_category_url, class:'nav-link'%> </li>
             <% else %>
-              <li class='nav-item'><%= link_to "Cookbook", cookbook_url, class:'nav-link'%> </li>
+              <li class='nav-item'><%= link_to "Cookbook", user_recipes_path, class:'nav-link'%> </li>
             <% end %>
           </ul>
 

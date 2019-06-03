@@ -2,6 +2,9 @@ Category.destroy_all
 Recipe.destroy_all
 RecipeCategory.destroy_all
 
+user = User.create(email: "some@guy.com", password: "password")
+admin = User.create(email: "admin@gmail.com", password: "redfred", admin: true)
+
 categories  = [
                 {name: 'latin'},
                 {name: 'japanese'},
@@ -112,6 +115,11 @@ RecipeCategory.create(recipe: cinnamon_rolls, category: Category.find_by(name: "
 RecipeCategory.create(recipe: cinnamon_rolls, category: Category.find_by(name: "dessert"))
 RecipeCategory.create(recipe: cinnamon_rolls, category: Category.find_by(name: "gluten free"))
 
+UserRecipe.create(recipe: arroz_pollo, user: user)
+UserRecipe.create(recipe: lasgna, user: user)
+UserRecipe.create(recipe: tofu_nuggets, user: user)
+
 puts "#{Recipe.count} recipes and"
 puts "#{Category.count} categories and"
 puts "#{RecipeCategory.count} entries in Recipe Category."
+puts "#{UserRecipe.count} recipes saved in User's cookbook."

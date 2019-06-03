@@ -5,6 +5,14 @@
   <%= render 'ratings/form', recipe: @recipe, rating: @rating %>
 <% end %>
 
+<button>
+  <% if @user_recipe %>
+    <%= link_to "Remove from Cookbook", user_recipe_path(@user_recipe.id), method: 'DELETE'%>
+  <% else %>
+    <%= link_to "Add to Cookbook", user_recipes_path(params: {recipe_id: @recipe}), method: 'POST'%>
+  <% end %>
+</button>
+
 <p>
   Recipe Details
   <%= @recipe.recipe_details %>
