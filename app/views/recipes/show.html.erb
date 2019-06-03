@@ -1,9 +1,9 @@
 <h1><%= @recipe.name %></h1>
+<h3><%= @recipe.ratings.average(:score) %> stars</h3>
 
-<p>
-  Recipe Details
-  <%= @recipe.recipe_details %>
-</p>
+<% if user_signed_in? %>
+  <%= render 'ratings/form', recipe: @recipe, rating: @rating %>
+<% end %>
 
 <button>
   <% if @user_recipe %>
@@ -12,3 +12,30 @@
     <%= link_to "Add to Cookbook", user_recipes_path(params: {recipe_id: @recipe}), method: 'POST'%>
   <% end %>
 </button>
+
+<p>
+  Recipe Details
+  <%= @recipe.recipe_details %>
+</p>
+
+<hr>
+
+<h4>Comments</h4>
+
+<% if user_signed_in? %>
+  <%= render 'comments/form', recipe: @recipe, comment: @comment %>
+<% end %>
+
+<% @recipe.comments.each do |comment| %>
+  <div class="card">
+    <div class="card-body">
+      <%= comment.user.email%>: <%= comment.content %>
+      <% if current_user.id == comment.user.id || current_user.admin?%>
+        <%= link_to 'Remove Comment', [@recipe, comment],
+            method: :delete,
+            data: { confirm: 'Are you sure?' },
+            class: "float-right" %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
