@@ -1,19 +1,6 @@
-<h1><%= @category.name %></h1>
+<h1 id="category-show-head"><%= @category.name.capitalize %> Recipes </h1>
 
-<table class="admin_table">
-  <thead>
-    <tr>
-      <th>Name</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><%= @category.name %></td>  
-    </tr>
-  </tbody>
-</table>
-
-<h3>Recipes in this Category</h3>
+<h3 id="category-show-list">Recipes in this Category</h3>
 <% @category.recipes.each do |recipe| %>
   <p>
     <%= link_to recipe.name, recipe %>
