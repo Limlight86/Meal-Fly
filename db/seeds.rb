@@ -2,8 +2,8 @@ Category.destroy_all
 Recipe.destroy_all
 RecipeCategory.destroy_all
 
-user = User.create(email: "some@guy.com", password: "password")
-admin = User.create(email: "admin@gmail.com", password: "redfred", admin: true)
+user = User.create(email: "some@guy.com", password: "password", username: "someguy123")
+admin = User.create(email: "admin@gmail.com", password: "redfred", admin: true, username: "admin")
 
 categories  = [
                 {name: 'latin'},
