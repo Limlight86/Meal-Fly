@@ -1,5 +1,7 @@
 class RecipesController < ApplicationController
   def index
+    @featured_recipe = Recipe.all.sample
+    @featured_category = Category.all.sample
   end
 
   def show

@@ -1,1 +1,15 @@
-<h1>Regular App Home Page!</h1>
+<h1>Meal Fly</h1>
+
+<h2>Featured Recipe</h2>
+
+<%= @featured_recipe.name %>
+
+<h3>Featured Category</h3>
+
+<%= @featured_category.name %>
+
+<ul>
+  <% @featured_category.recipes.each do |recipe| %>
+    <li><%= recipe.name %></li>
+  <% end %>
+</ul>
