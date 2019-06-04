@@ -2,7 +2,11 @@
 
 <h2>Featured Recipe</h2>
 
-<%= @featured_recipe.name %>
+<% if @featured_recipe %>
+  <%= @featured_recipe.name %>
+<% else %>
+  No recipes match your preferences =(
+<% end %>
 
 <h3>Featured Category</h3>
 

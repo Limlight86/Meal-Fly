@@ -3,6 +3,7 @@ class RecipesController < ApplicationController
     if @profile.persisted?
       @featured_recipe    = Recipe.joins(recipe_categories: :category)
                               .where(categories: { id: @profile.categories })
+                              .where("difficulty = #{Profile.skill_levels[@profile.skill_level]}")
                               .sample
       @featured_category  = @profile.categories.sample
     else
