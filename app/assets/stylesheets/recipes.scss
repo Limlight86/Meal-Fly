@@ -20,6 +20,11 @@ body {
   .admin_table, th, td {
     border: 1px solid black;
   }
+
+  .recipe_video {
+    height: 100px;
+    padding: 10px;
+  }
   
   .admin_table th {
     height: 50px;
@@ -56,7 +61,7 @@ body {
     clear: both;
     }
   
-  .recipe_video {
+  .show_video {
       height: 500px;
       padding: 10px;
     }
