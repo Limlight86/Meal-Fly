@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_02_222515) do
+ActiveRecord::Schema.define(version: 2019_06_04_184200) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,23 @@ ActiveRecord::Schema.define(version: 2019_06_02_222515) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["recipe_id"], name: "index_comments_on_recipe_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "profile_categories", force: :cascade do |t|
+    t.bigint "profile_id", null: false
+    t.bigint "category_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_profile_categories_on_category_id"
+    t.index ["profile_id"], name: "index_profile_categories_on_profile_id"
+  end
+
+  create_table "profiles", force: :cascade do |t|
+    t.integer "skill_level"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
   create_table "ratings", force: :cascade do |t|
@@ -115,13 +132,18 @@ ActiveRecord::Schema.define(version: 2019_06_02_222515) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "admin", default: false, null: false
+    t.string "username"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["username"], name: "index_users_on_username", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "comments", "recipes"
   add_foreign_key "comments", "users"
+  add_foreign_key "profile_categories", "categories"
+  add_foreign_key "profile_categories", "profiles"
+  add_foreign_key "profiles", "users"
   add_foreign_key "ratings", "recipes"
   add_foreign_key "ratings", "users"
   add_foreign_key "user_recipes", "recipes"

@@ -1,5 +1,15 @@
 class RecipesController < ApplicationController
   def index
+    if @profile.persisted?
+      @featured_recipe    = Recipe.joins(recipe_categories: :category)
+                              .where(categories: { id: @profile.categories })
+                              .where("difficulty = #{Profile.skill_levels[@profile.skill_level]}")
+                              .sample
+      @featured_category  = @profile.categories.sample
+    else
+      @featured_recipe    = Recipe.all.sample
+      @featured_category  = Category.all.sample
+    end
   end
 
   def show
