@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   root 'recipes#index'
   resources :search_results, only: [:index]
 
+  resource :profile, only: [:edit, :update]
+
   resources :recipes, only: [:index, :show] do
     resources :comments, only: [:create, :destroy]
     resources :ratings, only: [:create, :update]

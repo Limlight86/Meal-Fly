@@ -1,0 +1,7 @@
+<% if @profile.persisted? %>
+  <h1>Update Your Profile</h1>
+<% else %>
+  <h1>Create Your Profile</h1>
+<% end %>
+
+<%= render 'form' %>
