@@ -23,12 +23,34 @@
 <%= react_component 'UserRecipe', props: { inCookbook: @in_cookbook, recipe: @recipe } %>
 </div>
 
-<div class="recipe-attrivutes">
+<p class="cuisine"><h3><%= @recipe.categories.pluck(:name).join(", ") %></h3></p>
+
 <div class="row">
 <div class="column">
-<p class="cuisine"><%= @recipe.categories.pluck(:name).join(", ") %></p>
-<p class="recipe-difficulty">Skill Level: <%= @recipe.difficulty %></p>
+<p class="recipe-difficulty"><b>Skill Level: <%= @recipe.difficulty %></b></p>
 <p class="serving-size">Serves <%= @recipe.servings %></p>
+
+<div class="nutrition">
+<h4>Nutrition Facts</h4>
+      <ul class="nutrition-facts">
+        <li class="recipe-calories">Calories <b><%= @recipe.calories %></b></li> 
+        <li class="recipe-fat">Fat <b><%= @recipe.fat %>g</b></li> 
+        <li class="recipe-carbs">Carbs <b><%= @recipe.carbs %>g</b></li> 
+        <li class="recipe-protein">Protein <b><%= @recipe.protein %>g</b></li> 
+        <li class="recipe-fiber">Fiber <b><%= @recipe.fiber %>g</b></li> 
+        <li class="recipe-sugar">Sugar <b><%= @recipe.sugar %>g</b></li>
+        </div>
+      </ul>
+      <p class="nutrition-disclaimer">
+      Estimated values based on one serving size.</p>
+</div>
+
+
+<div class="column">
+  <%= video_tag url_for(@recipe.video), class: "show_video", controls:'' %>    
+</div>
+</div>
+
 <h3>Ingredients</h3>
 <p>
 1 red onion, sliced into rings<br>
@@ -44,13 +66,6 @@ salt, to taste<br>
 6 eggs, fried, for serving<br>
 1 avocado, for serving<br>
 </p>
-</div>
-
-<div class="column">
-  <%= video_tag url_for(@recipe.video), class: "show_video", controls:'' %>    
-</div>
-</div>
-</div>
 
 <p>
   <h3>Instructions</h3>

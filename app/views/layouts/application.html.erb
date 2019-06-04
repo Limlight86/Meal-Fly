@@ -84,6 +84,7 @@
         <% end %>
       </div>
     </nav>
+<<<<<<< HEAD
     <% unless @profile.persisted? || current_page?(edit_profile_path) || devise_controller? %>
       <div class="alert alert-warning alert-dismissible fade show" role="alert">
         <strong>New Here?</strong> <%= link_to "Create a profile", edit_profile_path %> to access all our features.
@@ -93,6 +94,9 @@
       </div>
     <% end %>
     <div class='container animated fadeIn faster'>
+=======
+    <div class='animated fadeIn faster'>
+>>>>>>> changes to seed file and recipe model for skill level
       <% if notice %>
         <div id="notice">
           <%= notice %>
