@@ -1,16 +1,65 @@
+<div class="recipe-page">
 <h1><%= @recipe.name %></h1>
-<h3><%= @recipe.ratings.average(:score) %> stars</h3>
+<!---<h3> Recipe Rating: </h3>--->
+<% if @recipe.ratings.average(:score) == nil %>
+    No reviews posted, be the first!
+  <% else %>
+    <% case @recipe.ratings.average(:score) %>
+      <% when  1 %>
+      <span class="fa fa-star checked"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span>
+      <% when  2 %>
+      <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span>
+      <% when  3 %>
+      <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span><span class="fa fa-star"></span>
+      <% when  4 %>
+      <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span>
+      <% when  5 %>
+      <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span>
+    <% end %>
+  <% end %>
+</p>
 
-<% if user_signed_in? %>
-  <%= render 'ratings/form', recipe: @recipe, rating: @rating %>
-<% end %>
-
+<div class="cookbook">
 <%= react_component 'UserRecipe', props: { inCookbook: @in_cookbook, recipe: @recipe } %>
+</div>
+
+<div class="recipe-attrivutes">
+<div class="row">
+<div class="column">
+<p class="cuisine"><%= @recipe.categories.pluck(:name).join(", ") %></p>
+<p class="recipe-difficulty">Skill Level: <%= @recipe.difficulty %></p>
+<p class="serving-size">Serves <%= @recipe.servings %></p>
+<h3>Ingredients</h3>
+<p>
+1 red onion, sliced into rings<br>
+salt, to taste<br>
+1 cup  vinegar<br>
+6 plantains<br>
+5 cups  water<br>
+2 cups  canola oil, divided<br>
+12 slices dominican frying cheese, queso de freir<br>
+1 cup  flour<br>
+18 slices dominican salami, salami frito<br>
+6 tablespoons  butter, sliced<br>
+6 eggs, fried, for serving<br>
+1 avocado, for serving<br>
+</p>
+</div>
+
+<div class="column">
+  <%= video_tag url_for(@recipe.video), class: "recipe_video", controls:'' %>    
+</div>
+</div>
+</div>
 
 <p>
-  Recipe Details
+  <h3>Instructions</h3>
   <%= @recipe.recipe_details %>
 </p>
+
+ <% if user_signed_in? %>
+  <%= render 'ratings/form', recipe: @recipe, rating: @rating %>
+<% end %>
 
 <hr>
 
@@ -33,3 +82,5 @@
     </div>
   </div>
 <% end %>
+
+</div>
