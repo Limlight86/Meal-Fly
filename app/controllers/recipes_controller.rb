@@ -2,7 +2,7 @@ class RecipesController < ApplicationController
   def index
     if @profile.persisted?
       skill_levels = Profile.skill_levels
-      @featured_recipe    = Recipe.featured(@profile)
+      @featured_recipe    = Recipe.for_profile(@profile).sample
       @featured_category  = @profile.categories.sample
     else
       @featured_recipe    = Recipe.all.sample

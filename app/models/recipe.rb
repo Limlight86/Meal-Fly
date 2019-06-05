@@ -27,9 +27,10 @@ class Recipe < ApplicationRecord
             :cook_time,
             presence: true
 
-  scope  :ordered, ->  { order(name: :asc) }
-  scope  :featured, -> (profile){joins(recipe_categories: :category)
-                        .where(categories: { id: profile.categories })
-                        .where(difficulty: profile.skill_levels.keys)
-                        .sample}
+  scope  :ordered,      ->  { order(name: :asc) }
+  scope  :for_profile,  ->  (profile){
+                              joins(recipe_categories: :category)
+                                .where(categories: { id: profile.categories })
+                                .where(difficulty: profile.skill_levels.keys)
+                            }
 end
