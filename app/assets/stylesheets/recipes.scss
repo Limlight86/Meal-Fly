@@ -1,19 +1,74 @@
-.admin_table, th, td {
+.checked {
+  color: orange;
+}
+
+body {
+  background-color:gray;
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+.admin_table, .admin_table th, .admin_table td {
   border: 1px solid black;
+  background-color: white;
 }
 
 .admin_table {
   border-collapse: collapse;
   text-align: center;
-  width: 100%
+  width: 100%;
 }
 
-.admin_table, th, td {
-  border: 1px solid black;
+#recipe-index-head{
+  margin: 20px 0 20px 0;
+  text-align: center;
+}
+
+#category-show-head{
+  margin: 20px 0 20px 0;
+  text-align: center;
+}
+
+#category-index-head{
+  margin: 20px 0 20px 0;
+  text-align: center;
+}
+
+#category-show-list{
+  margin-bottom: 20px;
+}
+
+#new-recipe-head{
+  text-align: center;
+  margin-top: 20px
+}
+
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.recipe_video {
+  height: 100px;
+  padding: 10px;
 }
 
 .admin_table th {
   height: 50px;
+}
+
+.recipe-page {
+  margin: 20px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.96)
+}
+
+.recipe-difficulty, .serving-size, .nutrition, .nutrition-disclaimer {
+  margin-left: 12px;
+}
+
+.cookbook{
+  float: right;
 }
 
 .recipe_image{
@@ -23,8 +78,56 @@
   border-radius: 100%;
 }
 
-.recipe_video{
-  object-fit: cover;
-  width: 100px;
-  height: 100px;
+.recipe-name {
+  font-weight: bold;
+}
+
+.recipe-column {
+  float: right;
+  width: 50%;
+}
+
+.recipe-row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.show_video {
+  height: 500px;
+  padding: 10px;
+  margin-bottom: 25px;
+}
+
+.serving-size {
+  font-size: 18px;
+  font-style: italic;
+}
+
+.nutrition li{
+  padding: 0;
+  list-style-type: none;
+  font-size: 16px;
+}
+
+.instructions{
+  padding: 10px;
+  text-align: left;
+}
+
+.cook-time {
+  font-size: 20px;
+}
+
+.nutrition-disclaimer {
+  color: gray;
+  font-size: 12px;
+}
+
+.rating {
+   float: right
+}
+
+.container{
+  margin-bottom: 100px
 }

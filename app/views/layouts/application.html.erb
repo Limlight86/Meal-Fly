@@ -4,12 +4,16 @@
     <title>Meal Fly</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <meta name="turbolinks-cache-control" content="no-preview"/>
-    
+
+    <meta name="turbolinks-cache-control" content="no-preview"></meta>
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap" rel="stylesheet">
     <link 
     rel="stylesheet" 
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     >
+
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap" rel="stylesheet">
+
     <link
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       rel="stylesheet"
@@ -62,10 +66,11 @@
             </form>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <%= current_user.email %>
+                <%= current_user.username %>
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                 <%= link_to "Account", edit_user_registration_url, class: "dropdown-item" %>
+                <%= link_to "Profile", edit_profile_url, class: "dropdown-item" %>
                 <div class="dropdown-divider"></div>
                 <%= link_to "Sign Out", destroy_user_session_url,
                     method: :delete,
@@ -75,13 +80,16 @@
           </ul>
         <% else %>
           <ul class="navbar-nav ml-auto">
+            <form class="form-inline my-2 my-lg-0">
+              <%= react_component 'Search' %>
+            </form>
             <li class='nav-item'><%= link_to "Sign In", new_user_session_path, class:'nav-link'%> </li>
-            <li class='nav-item'><%= link_to "Sign Up", new_user_registration_path, class:'nav-link'%> </li>
+            <li class='nav-item'><%= link_to @profile.persisted? ? "Edit Profile" : "Create Profile", edit_profile_url, class:'nav-link'%> </li>
           </ul>
         <% end %>
       </div>
     </nav>
-    <div class='container animated fadeIn faster'>
+    <div class='animated fadeIn faster'>
       <% if notice %>
         <div id="notice">
           <%= notice %>

@@ -1,1 +1,24 @@
-<h1>Regular App Home Page!</h1>
+<div class="index_page">
+  <h1>Welcome to Meal <i>Fly</i></h1>
+  <h3>Featured Recipe</h3>
+  <div class="featuredimage-container">
+    <% if @featured_recipe %>
+      <div class="bottom-left">
+        <%= @featured_recipe.name %>
+      </div>
+      <% if @featured_recipe.image.attached? %>
+        <%= image_tag @featured_recipe.image.variant(resize_to_limit: [500, 500]), class: "featured_image" %>
+      <% end %>
+    <% else %>
+      <p>No recipes match your preferences =(</p>
+    <% end %>
+  </div>
+  
+  <h3>Featured Category</h3>
+  <%= render 'category', category: @featured_category %>
+
+  <hr>
+
+  <% @categories.each do |category| %>
+    <%= render 'category', category: category %>
+  <% end %>
