@@ -29,7 +29,8 @@ eggs = Recipe.create(
   fat:            5,
   sugar:          0,
   fiber:          0,
-  recipe_details: "Cook the food....doesnt get much easier than this!"
+  recipe_ingredients: "Ingredients go here <============",
+  recipe_instructions: "Cook the food....doesnt get much easier than this!"
 )
 
 arroz_pollo = Recipe.create(
@@ -43,7 +44,8 @@ arroz_pollo = Recipe.create(
   fat:            16,
   sugar:          1,
   fiber:          2,
-  recipe_details: "Cook the food. Comer la comida!"
+  recipe_ingredients: "Ingredients go here <============",
+  recipe_instructions: "Cook the food. Comer la comida!"
 )
 
 ramen = Recipe.create(
@@ -57,7 +59,8 @@ ramen = Recipe.create(
   fat:            33,
   sugar:          3,
   fiber:          10,
-  recipe_details: "Cook the food, Enjoy the food! Slurp it down!"
+  recipe_ingredients: "Ingredients go here <============",
+  recipe_instructions: "Cook the food, Enjoy the food! Slurp it down!"
 )
 
 lasgna = Recipe.create(
@@ -71,7 +74,8 @@ lasgna = Recipe.create(
   fat:            34,
   sugar:          14,
   fiber:          5,
-  recipe_details: "Cook the food, Enjoy the food!...Thats alot of pasta!"
+  recipe_ingredients: "Ingredients go here <============",
+  recipe_instructions: "Cook the food, Enjoy the food!...Thats alot of pasta!"
 )
 
 tofu_nuggets = Recipe.create(
@@ -85,7 +89,8 @@ tofu_nuggets = Recipe.create(
   fat:            22,
   sugar:          1,
   fiber:          2,
-  recipe_details: "Cook the food, Enjoy the food!...These look real good!"
+  recipe_ingredients: "Ingredients go here <============",
+  recipe_instructions: "Cook the food, Enjoy the food!...These look real good!"
 )
 
 cinnamon_rolls = Recipe.create(
@@ -99,7 +104,8 @@ cinnamon_rolls = Recipe.create(
   fat:            19,
   sugar:          28,
   fiber:          5,
-  recipe_details: "Cook the food, Enjoy the food!...No animals were harmed in the making of this recipe!"
+  recipe_ingredients: "Ingredients go here <============",
+  recipe_instructions: "Cook the food, Enjoy the food!...No animals were harmed in the making of this recipe!"
 )
 
 RecipeCategory.create(recipe: eggs, category: Category.find_by(name: "Comfort food"))

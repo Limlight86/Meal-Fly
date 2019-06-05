@@ -8,8 +8,13 @@
 <%= react_component 'UserRecipe', props: { inCookbook: @in_cookbook, recipe: @recipe } %>
 
 <p>
-  Recipe Details
-  <%= @recipe.recipe_details %>
+  Ingredients
+  <%= @recipe.recipe_ingredients %>
+</p>
+
+<p>
+  Instructions
+  <%= @recipe.recipe_instructions %>
 </p>
 
 <hr>

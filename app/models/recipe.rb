@@ -4,7 +4,8 @@ class Recipe < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :ratings, dependent: :destroy
   has_many :user_recipes, dependent: :destroy
-  has_rich_text :recipe_details
+  has_rich_text :recipe_ingredients
+  has_rich_text :recipe_instructions
   has_one_attached :image
   has_one_attached :video
 
@@ -21,7 +22,8 @@ class Recipe < ApplicationRecord
             :fat,
             :sugar,
             :fiber,
-            :recipe_details,
+            :recipe_ingredients,
+            :recipe_instructions,
             :cook_time,
             presence: true
 

@@ -65,7 +65,8 @@ class Admin::RecipesController < Admin::BaseController
         :fat,
         :sugar,
         :fiber,
-        :recipe_details,
+        :recipe_ingredients,
+        :recipe_instructions,
         :video,
         :cook_time,
         :image
