@@ -1,8 +1,54 @@
 <h1>Cookbook!</h1>
+<div class="cookbook-wrapper">
+  <% @user_recipes.each do |user_recipe| %>
+    <%= link_to user_recipe.recipe do %>
+      <div class="all">
+        <div class="recepie">
+          <div class="image">
+            <div><%= react_component 'UserRecipe', props: { recipe: user_recipe.recipe, inCookbook: true, :className => 'my-btn' } %></div>
+          </div>
 
-<% @user_recipes.each do |user_recipe| %>
-  <p>
-    <%= link_to user_recipe.recipe.name, user_recipe.recipe%>
-    <%= react_component 'UserRecipe', props: { recipe: user_recipe.recipe, inCookbook: true } %>
-  </p>
-<% end %>
+          <div class="info">
+            <div>
+              <div class="name-category">
+                <strong class="name"><%= user_recipe.recipe.name %></strong>
+                <span>
+                  <strong class="category">Categories:</strong> <%= user_recipe.recipe.categories.pluck(:name).join(", ").titlecase %>
+                </span>
+              </div>
+
+              <span>
+                <strong>Rating: </strong>
+
+                <% if user_recipe.recipe.ratings.average(:score) %>
+                <% user_recipe.recipe.ratings.average(:score).round.times do %>
+                  <span class="fa fa-star checked"></span>
+                <% end %>
+                <% (5 - user_recipe.recipe.ratings.average(:score).round).times do %>
+                  <span class="fa fa-star"></span>
+                <% end %>
+                <% else %>
+                No reviews posted, be the first!
+                <% end %>
+              </span>
+
+              <div class="time-difficulty">
+                <span><strong>Cook Time: </strong><%= user_recipe.recipe.cook_time %>min</span>
+                <span><strong>Difficulty:</strong> <%= user_recipe.recipe.difficulty%></span>
+              </div>
+            </div>
+
+            <span class="nutrients">
+              <span><strong>Calories:</strong> <%= user_recipe.recipe.calories %></span>
+              <span><strong>Carbs:</strong>    <%= user_recipe.recipe.carbs %></span>
+              <span><strong>Proteins:</strong>    <%= user_recipe.recipe.protein %></span>
+              <span><strong>Fats:</strong>    <%= user_recipe.recipe.fat %></span>
+              <span><strong>Sugar:</strong>    <%= user_recipe.recipe.sugar %></span>
+              <span><strong>Fibers:</strong>    <%= user_recipe.recipe.fiber %></span>
+            </span>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

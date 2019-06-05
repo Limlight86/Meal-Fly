@@ -5,7 +5,7 @@
   <%= render 'ratings/form', recipe: @recipe, rating: @rating %>
 <% end %>
 
-<%= react_component 'UserRecipe', props: { inCookbook: @in_cookbook, recipe: @recipe } %>
+<%= react_component 'UserRecipe', props: { inCookbook: @in_cookbook, recipe: @recipe, className: "" } %>
 
 <p>
   Recipe Details
