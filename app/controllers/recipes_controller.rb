@@ -16,8 +16,8 @@ class RecipesController < ApplicationController
     @recipe       = Recipe.find(params[:id])
     @comments     = @recipe.comments.includes(:user)
     @comment      = Comment.new
-    @rating       = @recipe.ratings.find_by(user_id: current_user.id) || Rating.new
-    @user_recipe  = current_user.user_recipes.find_by(recipe_id: @recipe.id)
-    @in_cookbook  = UserRecipe.where(user: current_user, recipe: @recipe).exists?
+    @rating       = @recipe.ratings.find_by(user: current_user) || Rating.new
+    @user_recipe  = UserRecipe.find_by(recipe_id: @recipe.id, user: current_user)
+    @in_cookbook  = @user_recipe.present?
   end
 end
