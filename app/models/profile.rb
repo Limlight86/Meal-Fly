@@ -6,4 +6,9 @@ class Profile < ApplicationRecord
   has_many :categories, through: :profile_categories
 
   belongs_to :user, optional: true
+  
+  def skill_levels
+    levels = Profile.skill_levels 
+    levels.select{|k,v| v <= levels[skill_level]}
+  end
 end
