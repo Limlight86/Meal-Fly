@@ -10,7 +10,7 @@ class Recipe < ApplicationRecord
 
   include SearchableByName
 
-  enum difficulty: { easy: 1, medium: 2, hard: 3 }
+  enum difficulty: { novice: 1, intermediate: 2, expert: 3 }
 
   validates :name,
             :servings,
