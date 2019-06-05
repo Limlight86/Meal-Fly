@@ -8,20 +8,25 @@
   text-align: center;
 }
 
+.featuredimage-container{
+  position: relative;
+}
+
 /* Bottom left text */
 .bottom-left {
   position: absolute;
-  bottom: 200px;
-  left: 90px;
+  bottom: 20px;
+  left: 0px;
   color: black;
-  background: rgba(255, 255, 255, 0.65)
+  background: rgba(255, 255, 255, 0.65);
+  font-size: 1.5rem;
 }
 
 .featured_image {
   max-height: 500px;
   width: 100%;
   text-align: center;
-  padding: 10px;
+  object-fit: cover;
 }
 
 
