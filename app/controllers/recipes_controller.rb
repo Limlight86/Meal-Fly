@@ -4,10 +4,13 @@ class RecipesController < ApplicationController
       skill_levels = Profile.skill_levels
       @featured_recipe    = Recipe.for_profile(@profile).sample
       @featured_category  = @profile.categories.sample
+      @categories         = @profile.categories
     else
       @featured_recipe    = Recipe.all.sample
       @featured_category  = Category.all.sample
+      @categories         = Category.all
     end
+    @categories = @categories.where.not(id: @featured_category.id)
   end
 
   def show
