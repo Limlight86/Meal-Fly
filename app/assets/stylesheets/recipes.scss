@@ -4,6 +4,7 @@
 
 body {
   background-color:gray;
+  font-family: 'Nunito Sans', sans-serif;
   }
   
   .admin_table, th, td {
@@ -19,6 +20,12 @@ body {
   
   .admin_table, th, td {
     border: 1px solid black;
+  }
+
+  .container {
+    position: relative;
+    text-align: center;
+    color: white;
   }
 
   .recipe_video {
@@ -59,6 +66,7 @@ body {
     float: right;
     width: 50%;
   }
+
   .row:after {
     content: "";
     display: table;
@@ -68,6 +76,7 @@ body {
   .show_video {
       height: 500px;
       padding: 10px;
+      margin-bottom: 25px;
     }
 
   .serving-size {
@@ -96,6 +105,5 @@ body {
   }
   
  .rating {
-   float: right;
- }
-  
+   float: right
+}

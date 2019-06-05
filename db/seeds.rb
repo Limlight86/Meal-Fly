@@ -22,7 +22,7 @@ eggs = Recipe.create(
   name:           "Fried Eggs",
   cook_time:      10,
   servings:       4,
-  difficulty:     "easy",
+  difficulty:     "Novice",
   calories:       94,
   carbs:          0,
   protein:        6,
@@ -36,7 +36,7 @@ arroz_pollo = Recipe.create(
   name:           "Arroz con Pollo",
   cook_time:      60,
   servings:       4,
-  difficulty:     "medium",
+  difficulty:     "Intermediate",
   calories:       430,
   carbs:          50,
   protein:        20,
@@ -50,7 +50,7 @@ ramen = Recipe.create(
   name:           "Tonkatsu Ramen",
   cook_time:      40,
   servings:       4,
-  difficulty:     "medium",
+  difficulty:     "Intermediate",
   calories:       250,
   carbs:          40,
   protein:        21,
@@ -64,7 +64,7 @@ lasgna = Recipe.create(
   name:           "100 layer Lasgna",
   cook_time:      240,
   servings:       20,
-  difficulty:     "hard",
+  difficulty:     "Expert",
   calories:       762,
   carbs:          43,
   protein:        52,
@@ -78,7 +78,7 @@ tofu_nuggets = Recipe.create(
   name:           "Popcorn Tofu Nuggets",
   cook_time:      90,
   servings:       6,
-  difficulty:     "medium",
+  difficulty:     "Intermediate",
   calories:       231,
   carbs:          18,
   protein:        10,
@@ -92,7 +92,7 @@ cinnamon_rolls = Recipe.create(
   name:           "Vegan Gluten-free Cinnamon Rolls",
   cook_time:      75,
   servings:       4,
-  difficulty:     "medium",
+  difficulty:     "Intermediate",
   calories:       406,
   carbs:          57,
   protein:        6,
@@ -116,7 +116,7 @@ RecipeCategory.create(recipe: cinnamon_rolls, category: Category.find_by(name: "
 RecipeCategory.create(recipe: cinnamon_rolls, category: Category.find_by(name: "Gluten Free"))
 
 UserRecipe.create(recipe: arroz_pollo, user: user)
-UserRecipe.create(recipe: lasagna, user: user)
+UserRecipe.create(recipe: lasgna, user: user)
 UserRecipe.create(recipe: tofu_nuggets, user: user)
 
 puts "#{Recipe.count} recipes and"
