@@ -108,6 +108,7 @@ cinnamon_rolls = Recipe.create(
   recipe_instructions: "Cook the food, Enjoy the food!...No animals were harmed in the making of this recipe!"
 )
 
+
 RecipeCategory.create(recipe: eggs, category: Category.find_by(name: "Comfort food"))
 RecipeCategory.create(recipe: arroz_pollo, category: Category.find_by(name: "Comfort food"))
 RecipeCategory.create(recipe: arroz_pollo, category: Category.find_by(name: "Latin"))

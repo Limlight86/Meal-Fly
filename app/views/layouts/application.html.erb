@@ -5,6 +5,13 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="turbolinks-cache-control" content="no-preview"></meta>
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap" rel="stylesheet">
+    <link 
+    rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    >
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap" rel="stylesheet">
+
     <link
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       rel="stylesheet"
@@ -80,15 +87,7 @@
         <% end %>
       </div>
     </nav>
-    <% unless @profile.persisted? || current_page?(edit_profile_path) || devise_controller? %>
-      <div class="alert alert-warning alert-dismissible fade show" role="alert">
-        <strong>New Here?</strong> <%= link_to "Create a profile", edit_profile_path %> to access all our features.
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-    <% end %>
-    <div class='container animated fadeIn faster'>
+    <div class='animated fadeIn faster'>
       <% if notice %>
         <div id="notice">
           <%= notice %>

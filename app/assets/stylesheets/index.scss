@@ -1,0 +1,44 @@
+.index_page {
+  margin: 20px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.96)
+}
+
+.category-container, .pic-row {
+  text-align: center;
+}
+
+/* Bottom left text */
+.bottom-left {
+  position: absolute;
+  bottom: 200px;
+  left: 90px;
+  color: black;
+  background: rgba(255, 255, 255, 0.65)
+}
+
+.featured_image {
+  max-height: 500px;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+}
+
+
+.featured_recipe {
+  height: 250px;
+  width: 300px;
+  border: solid 1px;
+}
+
+section {
+ width:100%;
+ margin: 0 auto;
+ white-space:nowrap; 
+ overflow: scroll;
+}
+
+.category-container {
+  /* As large as it needs to be */
+  width: 100%;
+}

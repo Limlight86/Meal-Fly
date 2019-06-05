@@ -1,19 +1,67 @@
-<h1>Meal Fly</h1>
+<div class="index_page">
+  <h1>Welcome to Meal <i>Fly</i></h1>
+  <h3>Featured Recipe</h3>
 
-<h2>Featured Recipe</h2>
-
-<% if @featured_recipe %>
-  <%= @featured_recipe.name %>
-<% else %>
-  No recipes match your preferences =(
-<% end %>
-
-<h3>Featured Category</h3>
-
-<%= @featured_category.name %>
-
-<ul>
+  <div class="featuredimage-container">
+    <% if @featured_recipe %>
+      <div class="bottom-left">
+        <h3><%= @featured_recipe.name %></h3><br/>
+      </div>
+      <% if @featured_recipe.image.attached? %>
+        <%= image_tag @featured_recipe.image.variant(resize_to_limit: [500, 500]), class: "featured_image" %>
+      <% end %>
+    <% else %>
+      <p>No recipes match your preferences =(</p>
+    <% end %>
+  </div>
+  <h3>Featured Category</h3>
+  <h3><%= @featured_category.name %></h3>
   <% @featured_category.recipes.each do |recipe| %>
-    <li><%= recipe.name %></li>
+
   <% end %>
-</ul>
+  <section>
+    <div class="category-container">
+      <div class="pic-row">
+        <% if @featured_recipe.image.attached? %>
+          <%= image_tag @featured_recipe.image.variant(resize_to_limit: [500, 500]), class: "featured_recipe" %>
+          <%= image_tag @featured_recipe.image.variant(resize_to_limit: [500, 500]), class: "featured_recipe" %>
+          <%= image_tag @featured_recipe.image.variant(resize_to_limit: [500, 500]), class: "featured_recipe" %>
+          <%= image_tag @featured_recipe.image.variant(resize_to_limit: [500, 500]), class: "featured_recipe" %>
+          <%= image_tag @featured_recipe.image.variant(resize_to_limit: [500, 500]), class: "featured_recipe" %>
+        <% end %>
+      </div>
+    </div>
+  </section>​
+  <h3><%= @featured_category.name %></h3>
+  <% @featured_category.recipes.each do |recipe| %>
+  <% end %>
+  <section>
+    <div class="category-container">
+      <div class="pic-row">
+        <% if @featured_recipe.image.attached? %>
+          <%= image_tag @featured_recipe.image.variant(resize_to_limit: [500, 500]), class: "featured_recipe" %>
+          <%= image_tag @featured_recipe.image.variant(resize_to_limit: [500, 500]), class: "featured_recipe" %>
+          <%= image_tag @featured_recipe.image.variant(resize_to_limit: [500, 500]), class: "featured_recipe" %>
+          <%= image_tag @featured_recipe.image.variant(resize_to_limit: [500, 500]), class: "featured_recipe" %>
+          <%= image_tag @featured_recipe.image.variant(resize_to_limit: [500, 500]), class: "featured_recipe" %>
+        <% end %>
+      </div>
+    </div>
+  </section>​
+  <h3><%= @featured_category.name %></h3>
+  <% @featured_category.recipes.each do |recipe| %>
+  <% end %>
+  <section>
+    <div class="category-container">
+      <div class="pic-row">
+        <% if @featured_recipe.image.attached? %>
+          <%= image_tag @featured_recipe.image.variant(resize_to_limit: [500, 500]), class: "featured_recipe" %>
+          <%= image_tag @featured_recipe.image.variant(resize_to_limit: [500, 500]), class: "featured_recipe" %>
+          <%= image_tag @featured_recipe.image.variant(resize_to_limit: [500, 500]), class: "featured_recipe" %>
+          <%= image_tag @featured_recipe.image.variant(resize_to_limit: [500, 500]), class: "featured_recipe" %>
+          <%= image_tag @featured_recipe.image.variant(resize_to_limit: [500, 500]), class: "featured_recipe" %>
+        <% end %>
+      </div>
+    </div>
+  </section>​
+</div>
