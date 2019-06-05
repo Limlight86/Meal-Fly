@@ -1,0 +1,81 @@
+.cookbook-wrapper{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+}
+
+.all{
+  color: black;
+}
+
+a:link{
+  text-decoration: none;
+}
+
+.recepie{
+  display: flex;
+  flex-direction: row;
+  border: 1px solid black;
+  height: 170px;
+}
+
+.image{
+  display: flex;
+  width: 350px;
+  height: 100%;
+  background-color: gray;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.my-btn{
+  font-size: 10px;
+  color: red;
+  height: 25px;
+  margin-bottom: 5px;
+  background-color: whitesmoke;
+  opacity: 0.8;
+  border: 1px solid black;
+  outline: none;
+  border-radius: 20px;
+  z-index: 10;
+}
+
+.my-btn:focus{
+  outline: none;
+}
+
+.info{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  padding: 3px;
+}
+
+.name-category{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.name{
+  font-size: 25px;
+  color: blue;
+}
+.time-difficulty{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+
+.nutrients{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.checked{
+  color: orange;
+}

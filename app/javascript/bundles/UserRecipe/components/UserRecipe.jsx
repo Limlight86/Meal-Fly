@@ -25,9 +25,9 @@ class UserRecipe extends Component {
     return(
       <button
         onClick={this.handleClick}
-        className={ inCookbook ? 'btn btn-danger' : 'btn btn-primary' }
+        className={this.props.className}
       >
-        { inCookbook ? 'Remove From Cookbook' : 'Add To Cookbook' }
+        { inCookbook ? 'Remove' : 'Add' }
       </button>
     )
   }
