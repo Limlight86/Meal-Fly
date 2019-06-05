@@ -15,7 +15,31 @@ body {
 .admin_table {
   border-collapse: collapse;
   text-align: center;
-  width: 100%
+  width: 100%;
+}
+
+#recipe-index-head{
+  margin: 20px 0 20px 0;
+  text-align: center;
+}
+
+#category-show-head{
+  margin: 20px 0 20px 0;
+  text-align: center;
+}
+
+#category-index-head{
+  margin: 20px 0 20px 0;
+  text-align: center;
+}
+
+#category-show-list{
+  margin-bottom: 20px;
+}
+
+#new-recipe-head{
+  text-align: center;
+  margin-top: 20px
 }
 
 .container {
@@ -102,4 +126,8 @@ body {
 
 .rating {
    float: right
+}
+
+.container{
+  margin-bottom: 100px
 }
