@@ -6,8 +6,10 @@
       <div class="bottom-left">
         <%= @featured_recipe.name %>
       </div>
+      <%= link_to @featured_recipe do %>
       <% if @featured_recipe.image.attached? %>
         <%= image_tag @featured_recipe.image.variant(resize_to_limit: [500, 500]), class: "featured_image" %>
+        <% end %>
       <% end %>
     <% else %>
       <p>No recipes match your preferences =(</p>
