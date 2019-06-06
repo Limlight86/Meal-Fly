@@ -1,10 +1,35 @@
-<%= form_with(model: [recipe, rating], local: true) do |form| %>
+<div id="stars-container" data-rating="<%= rating.score%>" style="display: flex;">
+  <% (1..5).each do |n|%>
+    <%= form_with(model: [recipe, rating], local: true) do |form| %>
+      <%= form.hidden_field :score, value: n %>
+      <span
+        data-stars="<%= n %>"
+        class="fa fa-star clickable <%= 'checked' if rating.score >= n %>"
+        onclick="this.closest('form').submit()"
+      >
+      </span>
+    <% end %>
+  <% end %>
+</div>
 
-  <%= form.label :rating, "Your Rating" %>
-  <%= form.number_field :score, min: 1, max: 5 %> / 5
+<script>
+  $('.fa-star').hover(
+    function(){
+      var stars = $(this).attr('data-stars')
+      $('.fa-star').each(function(){
+        if($(this).attr('data-stars') <= stars){
+          $(this).addClass('checked')
+        }
+      })
+    },
+    function(){
+      var stars = $(this).attr('data-stars')
+      $('.fa-star').each(function(){
+        if($(this).attr('data-stars') >= stars){
+          $(this).removeClass('checked')
+        }
+      })
+    }
+  )
+</script>
 
-  <div class="actions">
-    <%= form.submit nil, class: "btn btn-primary" %>
-  </div>
-<% end %>
-<br>

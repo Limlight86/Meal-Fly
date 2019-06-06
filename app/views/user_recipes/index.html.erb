@@ -4,8 +4,8 @@
     <%= link_to user_recipe.recipe do %>
       <div class="all">
         <div class="recepie">
-          <div class="image">
-            <div><%= react_component 'UserRecipe', props: { recipe: user_recipe.recipe, inCookbook: true, :className => 'my-btn' } %></div>
+          <div class="image" style="background-image: url('<%= rails_blob_url(user_recipe.recipe.image) %>'); background-size: cover; background-position: center">
+            <%= react_component 'UserRecipe', props: { recipe: user_recipe.recipe, inCookbook: true, :className => 'my-btn', inUserRecipe: true } %>
           </div>
 
           <div class="info">
@@ -34,7 +34,7 @@
 
               <div class="time-difficulty">
                 <span><strong>Cook Time: </strong><%= user_recipe.recipe.cook_time %>min</span>
-                <span><strong>Difficulty:</strong> <%= user_recipe.recipe.difficulty%></span>
+                <span><strong>Difficulty:</strong> <%= user_recipe.recipe.difficulty.capitalize%></span>
               </div>
             </div>
 

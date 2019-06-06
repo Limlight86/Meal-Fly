@@ -16,9 +16,11 @@
       <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span>
     <% end %>
   <% end %>
-  <div class="cookbook">
-    <%= react_component 'UserRecipe', props: { inCookbook: @in_cookbook, recipe: @recipe, className: "" } %>
-  </div>
+  <% if user_signed_in? %>
+    <div class="cookbook">
+      <%= react_component 'UserRecipe', props: { inCookbook: @in_cookbook, recipe: @recipe, className: "" } %>
+    </div>
+  <% end %>
   <p class="cuisine">
     <h3><%= @recipe.categories.pluck(:name).join(", ") %></h3>
   </p>
@@ -68,8 +70,8 @@
     <% @comments.each do |comment| %>
       <div class="card">
         <div class="card-body">
-          <%= comment.user.email%>: <%= comment.content %>
-          <% if current_user.id == comment.user.id || current_user.admin?%>
+          <%= comment.user.username%>: <%= comment.content %>
+          <% if current_user == comment.user || current_user&.admin?%>
             <%= link_to 'Remove Comment', [@recipe, comment],
                 method: :delete,
                 data: { confirm: 'Are you sure?' },
