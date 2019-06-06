@@ -3,7 +3,7 @@
   <div>
     <%= form.label :skill_level %>
     <%= form.select :skill_level,
-        options_for_select(Profile.skill_levels.map {|k, v| [k.humanize.capitalize, k]}) %>
+        options_for_select(Profile.skill_levels.map {|k, v| [k.humanize.capitalize, k]}, @profile.skill_level) %>
   </div>
 
   <h3>Categories</h3>
