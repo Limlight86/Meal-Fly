@@ -4,15 +4,15 @@
 
 
 #category-show-contents{
-display: grid;
-grid-template-columns: 1fr 1fr 1fr 1fr;
-grid-template-rows: 1fr 1fr 1fr 1fr;
-grid-column-gap: 1px;
-grid-row-gap: 5px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-column-gap: 1px;
+  grid-row-gap: 5px;
 }
 
 @media (min-width: 1200px){
-.container {
+  .container {
     max-width: 1200px;
   }
 }
