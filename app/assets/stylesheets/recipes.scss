@@ -3,7 +3,6 @@
 }
 
 body {
-  background-color:gray;
   font-family: 'Nunito Sans', sans-serif;
 }
 
@@ -42,12 +41,6 @@ body {
   margin-top: 20px
 }
 
-.container {
-  position: relative;
-  text-align: center;
-  color: white;
-}
-
 .recipe_video {
   height: 100px;
   padding: 10px;
@@ -83,7 +76,7 @@ body {
 }
 
 .recipe-column {
-  float: right;
+  float: left;
   width: 50%;
 }
 
