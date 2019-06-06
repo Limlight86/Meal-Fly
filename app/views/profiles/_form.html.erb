@@ -1,5 +1,5 @@
+<div class="profile">
 <%= form_with(model: @profile, url: profile_path, method: :put) do |form| %>
-
   <div>
     <%= form.label :skill_level %>
     <%= form.select :skill_level,
@@ -18,3 +18,4 @@
 
   <%= form.submit %>
 <% end %>
+</div>
