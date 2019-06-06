@@ -1,5 +1,7 @@
+<div class="category_page">
 <h1 id="category-show-head"><%= @category.name.capitalize %> Recipes </h1>
 
+<<<<<<< HEAD
 <div id= "category-show-contents">
   <% @category.recipes.each do |recipe| %>
     <% if recipe.image.attached? %>
@@ -9,3 +11,13 @@
     <% end %>  
   <% end %>
 </div>
+=======
+<h3 id="category-show-list">Recipes in this Category</h3>
+<% @category.recipes.each do |recipe| %>
+  <p>
+    <%= link_to recipe.name, recipe %>
+  </p>
+<% end %>
+
+  
+>>>>>>> pulling from master
