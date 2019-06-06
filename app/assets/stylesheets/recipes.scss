@@ -2,6 +2,21 @@
   color: orange;
 }
 
+.fa-star{
+  font-size: 30px;
+  color: white;
+  text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+    1px 1px 0 #000;
+  margin: 3px;
+}
+
+.fa-star.clickable{
+  cursor: pointer;
+}
+
 body {
   font-family: 'Nunito Sans', sans-serif;
 }
