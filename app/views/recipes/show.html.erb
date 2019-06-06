@@ -52,23 +52,10 @@
       </div>
     </div>
     <h3>Ingredients</h3>
-    <p>
-      1 red onion, sliced into rings<br>
-      salt, to taste<br>
-      1 cup  vinegar<br>
-      6 plantains<br>
-      5 cups  water<br>
-      2 cups  canola oil, divided<br>
-      12 slices dominican frying cheese, queso de freir<br>
-      1 cup  flour<br>
-      18 slices dominican salami, salami frito<br>
-      6 tablespoons  butter, sliced<br>
-      6 eggs, fried, for serving<br>
-      1 avocado, for serving<br>
-    </p>
+      <%= @recipe.recipe_ingredients%>
     <p>
       <h3>Instructions</h3>
-      <%= @recipe.recipe_details %>
+      <%= @recipe.recipe_instructions %>
     </p>
     <% if user_signed_in? %>
       <%= render 'ratings/form', recipe: @recipe, rating: @rating %>
