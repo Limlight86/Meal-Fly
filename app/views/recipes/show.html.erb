@@ -67,18 +67,17 @@
     <% if user_signed_in? %>
       <%= render 'comments/form', recipe: @recipe, comment: @comment %>
     <% end %>
+    <div class= "comment-parent">
     <% @comments.each do |comment| %>
-      <div class="card">
-        <div class="card-body">
-          <%= comment.user.username%>: <%= comment.content %>
+      <div class= "comment">
+          <%= comment.user.username%>:
+          <p><%= comment.content %></p>
           <% if current_user == comment.user || current_user&.admin?%>
             <%= link_to 'Remove Comment', [@recipe, comment],
                 method: :delete,
-                data: { confirm: 'Are you sure?' },
-                class: "float-right" %>
+                data: { confirm: 'Are you sure?' }%>
           <% end %>
         </div>
-      </div>
     <% end %>
   </div>
 </div>
