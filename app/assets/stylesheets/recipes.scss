@@ -1,5 +1,51 @@
-.checked {
-  color: orange;
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  background-image: linear-gradient(to bottom, #8ed47b, #a2cf60, #b9c844, #d1be2a, #ebb212);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.table thead th {
+  border: 1px solid black;
+}
+
+.admin_table, .admin_table th, .admin_table td {
+  border: 1px solid black;
+}
+
+.admin_table {
+  border-collapse: collapse;
+  text-align: center;
+  width: 100%;
+  background-color: white;
+}
+
+trix-editor {
+  border: 1px solid black !important;
+  background-color: whitesmoke
+}
+
+trix-toolbar .trix-button-group {
+  display: flex;
+  margin-bottom: 10px;
+  border: 1px solid black;
+  border-radius: 3px;
+}
+
+trix-toolbar .trix-button {
+    position: relative;
+    float: left;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 1em;
+    font-weight: 600;
+    white-space: nowrap;
+    padding: 0 0.5em;
+    margin: 0;
+    border-color: black !important;
+    border-bottom: none;
+    border-radius: 0;
+    background: white;
 }
 
 .fa-star{
@@ -21,19 +67,8 @@
   cursor: pointer;
 }
 
-body {
-  font-family: 'Nunito Sans', sans-serif;
-}
-
-.admin_table, .admin_table th, .admin_table td {
-  border: 1px solid black;
-  background-color: white;
-}
-
-.admin_table {
-  border-collapse: collapse;
-  text-align: center;
-  width: 100%;
+.checked {
+  color: orange;
 }
 
 #recipe-index-head{
@@ -69,15 +104,26 @@ body {
   height: 50px;
 }
 
+.recipe-link{
+  color: rgb(26, 164, 26);
+}
+
+.recipe-link:hover{
+  text-decoration: underline;
+}
+
 .recipe-page {
   margin: 20px;
   padding: 20px;
-  background-color: rgba(255, 255, 255, 0.96)
+  background-color: rgba(255, 255, 255, 0.99)
 }
 
-.recipe-difficulty, .serving-size, .nutrition, .nutrition-disclaimer {
-  margin-left: 12px;
+.cuisine {
+  padding-top: 50px;
 }
+/*.recipe-difficulty, .nutrition, .nutrition-disclaimer, .cuisine {
+  margin-left: 50px;
+}*/
 
 .cookbook{
   float: right;
@@ -97,6 +143,7 @@ body {
 .recipe-column {
   float: left;
   width: 50%;
+  padding-top: 25px;
 }
 
 .recipe-row:after {
@@ -115,6 +162,19 @@ body {
   font-size: 18px;
   font-style: italic;
 }
+
+/*.featured_image {
+  padding: 50px;
+  background-color: green;
+  transition: transform .2s; 
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.featured_image:hover{
+  transform: scale(1.5);
+}*/
 
 .nutrition li{
   padding: 0;
