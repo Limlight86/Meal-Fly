@@ -6,6 +6,14 @@
 
 .category-container, .pic-row {
   text-align: center;
+  display: flex;
+}
+
+.pic-wrapper{
+  width: 275px; 
+  height: 275px; 
+  overflow: hidden; 
+  margin: 2px;
 }
 
 .featuredimage-container{
@@ -13,7 +21,6 @@
 }
 
 .rp{
-  padding: 1px;
   transition: transform .2s; /* Animation */
   width: 275px;
   height: 275px;
@@ -56,4 +63,5 @@ section {
 }
 
 .category-container {
-  width: 100%;}
+  width: 100%;
+}
