@@ -12,6 +12,17 @@
   position: relative;
 }
 
+.rp{
+  padding: 1px;
+  transition: transform .2s; /* Animation */
+  width: 275px;
+  height: 275px;
+}
+
+.rp:hover{
+  transform: scale(1.25);
+}
+
 /* Bottom left text */
 .bottom-left {
   position: absolute;
@@ -20,15 +31,16 @@
   color: black;
   background: rgba(255, 255, 255, 0.65);
   font-size: 1.5rem;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .featured_image {
   max-height: 500px;
   width: 100%;
   text-align: center;
-  object-fit: cover;
+  object-fit: fill;
 }
-
 
 .featured_recipe {
   height: 250px;
@@ -44,6 +56,4 @@ section {
 }
 
 .category-container {
-  /* As large as it needs to be */
-  width: 100%;
-}
+  width: 100%;}
