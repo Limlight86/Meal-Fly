@@ -5,7 +5,7 @@
   <% @category.recipes.each do |recipe| %>
     <% if recipe.image.attached? %>
       <%= link_to recipe do %>
-        <%= image_tag recipe.image.variant(resize_to_limit: [500, 500]), class: "rp" %>
+        <%= image_tag recipe.image.variant(resize_to_limit: [500, 500]), class: "rp-show" %>
       <% end %>
     <% end %>  
   <% end %>

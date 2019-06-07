@@ -121,9 +121,6 @@ trix-toolbar .trix-button {
 .cuisine {
   padding-top: 50px;
 }
-/*.recipe-difficulty, .nutrition, .nutrition-disclaimer, .cuisine {
-  margin-left: 50px;
-}*/
 
 .cookbook{
   float: right;
@@ -201,15 +198,10 @@ trix-toolbar .trix-button {
 }
 
 .container{
+  margin-top: 20px;
   margin-bottom: 100px;
 }
-.card-body{
-  height: 30%;
-  width: 50%;
-  margin: 10%;
-}
-.card {
-  height: 30%;
-  width: 50%;
-  margin: 10%;
+
+body{
+  padding-top: 60px
 }
