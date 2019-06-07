@@ -67,16 +67,32 @@
     <% if user_signed_in? %>
       <%= render 'comments/form', recipe: @recipe, comment: @comment %>
     <% end %>
+    <div class="mt-2 row">
     <% @comments.each do |comment| %>
-      <div class="card">
-        <div class="card-body">
-          <%= comment.user.username%>: <%= comment.content %>
-          <% if current_user == comment.user || current_user&.admin?%>
-            <%= link_to 'Remove Comment', [@recipe, comment],
-                method: :delete,
-                data: { confirm: 'Are you sure?' },
-                class: "float-right" %>
-          <% end %>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title"><%= comment.user.username%></h5>
+            <% if comment.user.ratings.where(recipe: @recipe).exists? %>
+              <h6 class="card-subtitle">
+                <% comment.user.ratings.find_by(recipe: @recipe).score.times do %>
+                  <span class="fa fa-star checked small"></span>
+                <% end %>
+                <% (5 - comment.user.ratings.find_by(recipe: @recipe).score).times do %>
+                  <span class="fa fa-star small"></span>
+                <% end %>
+              </h6>
+            <% else %>
+              <h6 class="card-subtitle">No rating submitted</h6>
+            <% end %>
+            <p class="card-text"><%= comment.content %></p>
+            <% if current_user == comment.user || current_user&.admin?%>
+              <%= link_to 'Remove', [@recipe, comment],
+                  method: :delete,
+                  data: { confirm: 'Are you sure?' },
+                  class: "card-link float-right"%>
+            <% end %>
+          </div>
         </div>
       </div>
     <% end %>
