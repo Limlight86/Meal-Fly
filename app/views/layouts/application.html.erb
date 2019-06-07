@@ -42,70 +42,9 @@
   </head>
 
   <body>
-<<<<<<< HEAD
     <%= render 'shared/navbar' %>
     <%= render 'shared/alerts' %>
     <div class='container animated fadeIn faster'>
-=======
-    <nav class="navbar navbar-light bg-light navbar-expand-lg">
-      <%= link_to "Meal Fly", root_url, class: "navbar-brand" %>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" text-decoration="">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <% if user_signed_in? %>
-          <ul class="navbar-nav">
-            <% if current_user.admin? %>
-              <li class='nav-item'><%= link_to "All recipes", admin_recipes_url, class:'nav-link'%> </li>
-              <li class='nav-item'><%= link_to "New Recipe", new_admin_recipe_url, class:'nav-link'%> </li>
-              <li class='nav-item'><%= link_to "All categories", admin_categories_url, class:'nav-link'%> </li>
-              <li class='nav-item'><%= link_to "New Category", new_admin_category_url, class:'nav-link'%> </li>
-            <% else %>
-              <li class='nav-item'><%= link_to "Cookbook", user_recipes_path, class:'nav-link'%> </li>
-            <% end %>
-          </ul>
-
-          <ul class="ml-auto navbar-nav">
-            <form class="form-inline my-2 my-lg-0">
-              <%= react_component 'Search' %>
-            </form>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <%= current_user.username %>
-              </a>
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                <%= link_to "Account", edit_user_registration_url, class: "dropdown-item" %>
-                <%= link_to "Profile", edit_profile_url, class: "dropdown-item" %>
-                <div class="dropdown-divider"></div>
-                <%= link_to "Sign Out", destroy_user_session_url,
-                    method: :delete,
-                    class: "dropdown-item" %>
-              </div>
-            </li>
-          </ul>
-        <% else %>
-          <ul class="navbar-nav ml-auto">
-            <form class="form-inline my-2 my-lg-0">
-              <%= react_component 'Search' %>
-            </form>
-            <li class='nav-item'><%= link_to "Sign In", new_user_session_path, class:'nav-link'%> </li>
-            <li class='nav-item'><%= link_to @profile.persisted? ? "Edit Profile" : "Create Profile", edit_profile_url, class:'nav-link'%> </li>
-          </ul>
-        <% end %>
-      </div>
-    </nav>
-    <div class='container animated fadeIn faster'>
-      <% if notice %>
-        <div id="notice">
-          <%= notice %>
-        </div>
-      <% end %>
-      <% if alert %>
-        <div id="alert">
-          <%= alert %>
-        </div>
-      <% end %>
->>>>>>> pulling from master
       <%= yield %>
     </div>
   </body>
