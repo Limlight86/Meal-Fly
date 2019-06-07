@@ -115,7 +115,7 @@ trix-toolbar .trix-button {
 .recipe-page {
   margin: 20px;
   padding: 20px;
-  background-color: rgba(255, 255, 255, 0.99)
+  background-color: rgba(255, 255, 255, 0.96);
 }
 
 .cuisine {
@@ -197,9 +197,19 @@ trix-toolbar .trix-button {
 }
 
 .rating {
-   float: right
+   float: right;
 }
 
 .container{
-  margin-bottom: 100px
+  margin-bottom: 100px;
+}
+.card-body{
+  height: 30%;
+  width: 50%;
+  margin: 10%;
+}
+.card {
+  height: 30%;
+  width: 50%;
+  margin: 10%;
 }
