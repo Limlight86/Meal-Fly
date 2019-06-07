@@ -21,13 +21,23 @@
 }
 
 .rp{
-  transition: transform .2s; /* Animation */
+  transition: transform .3s; /* Animation */
   width: 275px;
   height: 275px;
 }
 
 .rp:hover{
   transform: scale(1.25);
+}
+
+.rp-show{
+  transition: transform .3s; /* Animation */
+  width: 275px;
+  height: 275px;
+}
+
+.rp-show:hover{
+  transform: scale(1.05);
 }
 
 /* Bottom left text */
