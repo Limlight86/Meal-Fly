@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.3'
 
+gem 'mini_racer', platforms: :ruby
 gem 'hirb'
 gem 'pg'
 gem 'dotenv-rails'

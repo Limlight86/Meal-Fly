@@ -1,5 +1,5 @@
 <%= link_to category do %>
-  <h3><%= category.name %></h3>
+  <h3 class="recipe-link"><%= category.name %></h3>
 <% end %>
 
 <section>
@@ -7,9 +7,11 @@
     <div class="pic-row">  
       <% category.recipes.first(10).each do |recipe| %>
         <% if recipe.image.attached? %>
-          <%= link_to recipe do %>
-            <%= image_tag recipe.image.variant(resize_to_limit: [500, 500]), class: "featured_recipe" %>
-          <% end %>
+          <div class="pic-wrapper">
+            <%= link_to recipe do %>
+              <%= image_tag recipe.image.variant(resize_to_limit: [500, 500]), class: "rp" %>
+            <% end %>
+          </div>
         <% end %>
       <% end %>  
     </div>
