@@ -1,10 +1,9 @@
 <div class="index_page">
-  <h1>Welcome to Meal <i>Fly</i></h1>
-  <h3>Featured Recipe</h3>
+  <h4 class="section-title">FEATURED RECIPE</h4>
   <div class="featuredimage-container">
     <% if @featured_recipe %>
       <div class="bottom-left">
-        <%= @featured_recipe.name %>
+        <%= @featured_recipe.name.titleize %>
       </div>
       <%= link_to @featured_recipe do %>
         <% if @featured_recipe.image.attached? %>
@@ -16,7 +15,7 @@
     <% end %>
   </div>
   
-  <h3>Featured Category</h3>
+  <h4 class="section-title">FEATURED CATEGORY</h4>
   <% if @featured_category %>
     <%= render('category', category: @featured_category) %> 
   <% else %>
