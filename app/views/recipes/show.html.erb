@@ -18,7 +18,7 @@
   <% end %>
   <% if user_signed_in? %>
     <div class="cookbook">
-      <%= react_component 'UserRecipe', props: { inCookbook: @in_cookbook, recipe: @recipe, className: "" } %>
+      <%= react_component 'UserRecipe', props: { inCookbook: @in_cookbook, recipe: @recipe, className: "add-to-cookbook-button" } %>
     </div>
   <% end %>
 

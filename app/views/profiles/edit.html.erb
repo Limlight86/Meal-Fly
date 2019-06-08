@@ -1,6 +1,7 @@
 <div class="profile">
 <% if @profile.persisted? %>
   <h1>Update Your Profile</h1>
+  <p> Choose your favorite recipes and categories here.</p>
 <% else %>
   <h1>Create Your Profile</h1>
 <% end %>
@@ -12,11 +13,12 @@
         options_for_select(Profile.skill_levels.map {|k, v| [k.humanize.capitalize, k]}, @profile.skill_level) %>
   </div>
   <h3>Categories</h3>
+  <p>Please pick your favorite categories below<p>
   <p>
     <% @categories.each do |category| %>
-      <%= form.label category.name %>
+      <p><%= form.label category.name %>
       <%= form.check_box "categories[#{category.id}]",
-          checked: @profile.categories.include?(category) %>
+          checked: @profile.categories.include?(category) %></p>
     <% end %>
   </p>
   <%= form.submit %>
