@@ -1,4 +1,4 @@
-<h1>Cookbook!</h1>
+<h1 class="title">Your Cookbook!</h1>
 <div class="cookbook-wrapper">
   <% @user_recipes.each do |user_recipe| %>
     <%= link_to user_recipe.recipe do %>
@@ -40,10 +40,15 @@
 
             <span class="nutrients">
               <span><strong>Calories:</strong> <%= user_recipe.recipe.calories %></span>
+              <strong>&bull;</strong>
               <span><strong>Carbs:</strong>    <%= user_recipe.recipe.carbs %></span>
+              <strong>&bull;</strong>
               <span><strong>Proteins:</strong>    <%= user_recipe.recipe.protein %></span>
+              <strong>&bull;</strong>
               <span><strong>Fats:</strong>    <%= user_recipe.recipe.fat %></span>
+              <strong>&bull;</strong>
               <span><strong>Sugar:</strong>    <%= user_recipe.recipe.sugar %></span>
+              <strong>&bull;</strong>
               <span><strong>Fibers:</strong>    <%= user_recipe.recipe.fiber %></span>
             </span>
           </div>

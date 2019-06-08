@@ -1,3 +1,6 @@
+.title{
+  text-align: center;
+}
 .cookbook-wrapper{
   display: grid;
   grid-template-columns: 1fr;
@@ -6,6 +9,10 @@
 
 .all{
   color: black;
+  padding: 20px;
+  padding-right: 150px;
+  padding-left: 150px;
+  padding-top: 27px;
 }
 
 a:link{
@@ -16,15 +23,12 @@ a:link{
   display: flex;
   flex-direction: row;
   border: 1px solid black;
-  height: 170px;
 }
 
 .image{
   display: flex;
   width: 350px;
-  height: 100%;
   background-color: gray;
-  justify-content: center;
   align-items: flex-end;
 
 }
@@ -33,6 +37,8 @@ a:link{
   font-size: 10px;
   color: red;
   height: 25px;
+  width: 70px;
+  margin-left: 5px;
   margin-bottom: 5px;
   background-color: whitesmoke;
   opacity: 0.8;
@@ -40,6 +46,11 @@ a:link{
   outline: none;
   border-radius: 20px;
   z-index: 10;
+}
+
+.my-btn:hover{
+  transition: .1s;
+  width: 100px;
 }
 
 .my-btn:focus{
@@ -51,7 +62,9 @@ a:link{
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
-  padding: 3px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 10px;
 }
 
 .name-category{
@@ -74,8 +87,20 @@ a:link{
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
+  padding: 10px;
 }
 
 .checked{
   color: orange;
+}
+
+.fa-star{
+  font-size: 20px;
+
+  text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+    1px 1px 0 #000;
+  margin: 3px;
 }
