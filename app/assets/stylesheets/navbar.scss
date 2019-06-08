@@ -1,17 +1,27 @@
 .nav-link.active{
-  color: green !important;
-  border-bottom: 1px solid green;
-  padding-bottom: 3px;
-}
+  color: white;
+  font-weight: 800;
+  padding-bottom: 3px;}
 
 .nav-link{
+  font-size: 18px;
   padding-left: 0 !important;
   padding-right: 0 !important;
   margin-right: 0.4rem !important;
   margin-left: 0.4rem !important;
 }
 
+.nav-link:hover {
+  color: white;
+}
+
 .navbar {
   padding-top: 0;
   padding-bottom: 0;
+  background: #82b74b;
+}
+
+.navbar-brand {
+  font-size: 25px!important;
+  margin-left: 5px; 
 }
