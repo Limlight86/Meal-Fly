@@ -24,10 +24,11 @@
   transition: transform .3s; /* Animation */
   width: 275px;
   height: 275px;
+  
 }
 
 .rp:hover{
-  transform: scale(1.25);
+  transform: scale(1.2);
 }
 
 .rp-show{
@@ -81,6 +82,7 @@ section {
   position: relative;
   text-align: center;
   margin: 10px;
+  overflow: hidden;
   img {
     width: 100%;
     height: 100%;
@@ -102,13 +104,49 @@ section {
     background-color:#000;
     opacity:0.4;
     transition: 0.5s;
-    transform: scale(1.05);
   }
   &:hover > .category-recipe-tittle {
     z-index: 2;
   }
   &:hover > img {
-    transform: scale(1.05);
+    transform: scale(1.2);
     transition: 0.5s
+  }
 }
+
+.cat-index-link {
+  position: relative;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  display: block;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+  .category-recipe-tittle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    z-index: -2;
+  }
+  &:hover > .overlay {
+    position: absolute;
+    top: 0;
+    width:100%;
+    height:100%;
+    left: 0;
+    background-color:#000;
+    opacity:0.4;
+    transition: 0.5s;
+  }
+  &:hover > .category-recipe-tittle {
+    z-index: 2;
+  }
+  &:hover > img {
+    transform: scale(1.2);
+    transition: 0.5s
+  }
 }
