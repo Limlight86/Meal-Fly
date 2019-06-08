@@ -25,8 +25,8 @@ class UserRecipe extends Component {
   render(){
     const { inCookbook } = this.state
     const { inUserRecipe } = this.props;
-    const removeText = inUserRecipe ? 'Remove' : 'Remove from Cookbook'
-    const addText = inUserRecipe ? 'Add' : 'Add to Cookbook'
+    const removeText = inUserRecipe ? '- Remove' : '- Remove from Cookbook'
+    const addText = inUserRecipe ? '+ Add' : '+ Add to Cookbook'
     return(
       <button
         onClick={this.handleClick}
