@@ -6,7 +6,7 @@
     <%= f.label :password, t('.new_password') %>
     <%= f.password_field :password, autofocus: true  %>
     <% if @minimum_password_length %>
-      <small class="form-text text-muted"><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></small>
+      <%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></small>
     <% end %>
     <%= f.label :password_confirmation, t('.confirm_new_password') %>
     <%= f.password_field :password_confirmation, autocomplete: 'off'  %>
