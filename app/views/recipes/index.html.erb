@@ -12,12 +12,18 @@
         <% end %>
       <% end %>
     <% else %>
-      <p>No recipes match your preferences =(</p>
+      Plese visit the <%=link_to "Profile", edit_profile_path %> page to customize your home view.
     <% end %>
   </div>
   
   <h3>Featured Category</h3>
-  <%= render 'category', category: @featured_category %>
+  <% if @featured_category %>
+    <%= render('category', category: @featured_category) %> 
+  <% else %>
+    <p>
+      Plese visit the <%=link_to "Profile", edit_profile_path %> page to customize your home view.
+    </p>
+  <% end %>
 
   <hr>
 
