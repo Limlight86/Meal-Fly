@@ -34,6 +34,7 @@
   transition: transform .3s; /* Animation */
   width: 275px;
   height: 275px;
+  z-index: 2
 }
 
 .rp-show:hover{
@@ -74,4 +75,40 @@ section {
 
 .category-container {
   width: 100%;
+}
+
+.category-show-link {
+  position: relative;
+  text-align: center;
+  margin: 10px;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+  .category-recipe-tittle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    z-index: -2;
+  }
+  &:hover > .overlay {
+    position: absolute;
+    top: 0;
+    width:100%;
+    height:100%;
+    left: 0;
+    background-color:#000;
+    opacity:0.4;
+    transition: 0.5s;
+    transform: scale(1.05);
+  }
+  &:hover > .category-recipe-tittle {
+    z-index: 2;
+  }
+  &:hover > img {
+    transform: scale(1.05);
+    transition: 0.5s
+}
 }

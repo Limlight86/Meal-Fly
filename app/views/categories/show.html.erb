@@ -4,9 +4,11 @@
 <div id= "category-show-contents">
   <% @category.recipes.each do |recipe| %>
     <% if recipe.image.attached? %>
-      <%= link_to recipe do %>
+      <%= link_to recipe, class: "category-show-link" do %>
         <%= image_tag recipe.image.variant(resize_to_limit: [500, 500]), class: "rp-show" %>
+        <span class='overlay'></span>
+        <span class="category-recipe-tittle"><%= recipe.name %></span>
       <% end %>
-    <% end %>  
+    <% end %>   
   <% end %>
 </div>
