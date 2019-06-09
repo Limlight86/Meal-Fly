@@ -1,21 +1,23 @@
 <div class="recipe-page">
-  <h1><%= @recipe.name %></h1>
+  <h1><%= @recipe.name.titleize %></h1>
   <% if @recipe.ratings.average(:score).nil? %>
     No reviews posted, be the first!
   <% else %>
-    <% case @recipe.ratings.average(:score) %>
-    <% when  1 %>
-      <span class="fa fa-star checked"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span>
-    <% when  2 %>
-      <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span>
-    <% when  3 %>
-      <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span><span class="fa fa-star"></span>
-    <% when  4 %>
-      <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span>
-    <% when  5 %>
-      <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span>
-    <% end %>
-  <% end %>
+    <p id="overall-rating">
+        <% case @recipe.ratings.average(:score) %>
+        <% when  1 %>
+          <span class="fa fa-star checked"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span>
+        <% when  2 %>
+          <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span>
+        <% when  3 %>
+          <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span><span class="fa fa-star"></span>
+        <% when  4 %>
+          <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star"></span>
+        <% when  5 %>
+          <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span>
+        <% end %>
+      <% end %>
+    </p>
   <% if user_signed_in? %>
     <div class="cookbook">
       <%= react_component 'UserRecipe', props: { inCookbook: @in_cookbook, recipe: @recipe, className: "recipe-btn" } %>
@@ -30,19 +32,20 @@
       <p class="recipe-difficulty">
         <h4 class="recipe-difficulty">Skill Level: <%= @recipe.difficulty.capitalize %></h4>
       </p>
+
+      <p class="serving-size">
+        Serves <%= @recipe.servings %>
+      </p>
      
       <div class="nutrition">
         <h4>Nutrition Facts</h4>
-         <p class="serving-size">
-        Serves <%= @recipe.servings %>
-      </p>
         <ul class="nutrition-facts">
-          <li class="recipe-calories">Calories <b><%= @recipe.calories %></b></li>
-          <li class="recipe-fat">Fat <b><%= @recipe.fat %>g</b></li>
-          <li class="recipe-carbs">Carbs <b><%= @recipe.carbs %>g</b></li>
-          <li class="recipe-protein">Protein <b><%= @recipe.protein %>g</b></li>
-          <li class="recipe-fiber">Fiber <b><%= @recipe.fiber %>g</b></li>
-          <li class="recipe-sugar">Sugar <b><%= @recipe.sugar %>g</b></li>
+          <li class="recipe-calories nf">Calories: <b><%= @recipe.calories %></b></li>
+          <li class="recipe-fat nf">Fat: <b><%= @recipe.fat %>g</b></li>
+          <li class="recipe-carbs nf">Carbs: <b><%= @recipe.carbs %>g</b></li>
+          <li class="recipe-protein nf">Protein: <b><%= @recipe.protein %>g</b></li>
+          <li class="recipe-fiber nf">Fiber: <b><%= @recipe.fiber %>g</b></li>
+          <li class="recipe-sugar nf">Sugar: <b><%= @recipe.sugar %>g</b></li>
           </div>
         </ul>
         <p class="nutrition-disclaimer">

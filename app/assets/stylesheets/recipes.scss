@@ -115,7 +115,12 @@ trix-toolbar .trix-button {
 .recipe-page {
   margin: 20px;
   padding: 20px;
+  padding-left: 60px;
   background-color: rgba(255, 255, 255, 0.96);
+  @media screen and (max-width: 980px) {
+    margin: 0px;
+    width: 775px;
+  }
 }
 
 .cuisine {
@@ -141,6 +146,18 @@ trix-toolbar .trix-button {
   float: left;
   width: 50%;
   padding-top: 25px;
+  @media screen and (max-width: 1024px) {
+    width: 51%;
+    padding-top: 0;
+    margin-bottom: 10px;
+    margin-left: 120px
+  }
+  @media screen and (max-width: 980px) {
+    width: 51%;
+    padding-top: 0;
+    margin-bottom: 10px;
+    margin-left: 10px
+  }
 }
 
 .recipe-row:after {
@@ -150,28 +167,16 @@ trix-toolbar .trix-button {
 }
 
 .show_video {
+  margin-top: 14px;
   height: 500px;
   padding: 10px;
-  margin-bottom: 25px;
 }
 
 .serving-size {
   font-size: 18px;
   font-style: italic;
+  margin-bottom: 35px
 }
-
-/*.featured_image {
-  padding: 50px;
-  background-color: green;
-  transition: transform .2s; 
-  width: 200px;
-  height: 200px;
-  margin: 0 auto;
-}
-
-.featured_image:hover{
-  transform: scale(1.5);
-}*/
 
 .nutrition li{
   padding: 0;
@@ -189,7 +194,7 @@ trix-toolbar .trix-button {
 }
 
 .nutrition-disclaimer {
-  
+  margin-top: 35px;
   font-size: 12px;
 }
 
@@ -200,18 +205,54 @@ trix-toolbar .trix-button {
 .container{
   margin-top: 20px;
   margin-bottom: 100px;
+  @media screen and (max-width: 980px) {
+    margin-left: 80px
+  }
 }
 
 body{
-  padding-top: 60px
+  padding-top: 60px;
+  background-color: #f8ece8
 }
 
 .recipe-btn{
   border-radius: 20px;
   background-color: #a2cf60;
-  
+  margin-right: 50px
 }
 
 .recipe-btn:focus{
   outline: none;
+}
+
+.card-body{
+  min-height: 154px;
+  margin-bottom: 10px
+}
+
+.card{
+  margin-bottom: 10px;
+
+}
+
+#overall-rating{
+  margin-bottom: 0;
+}
+
+.nf{
+  margin-bottom: 10px
+}
+
+.btn-color {
+  background-color: #83B64B;
+  color: black;
+  border: none;
+  margin-bottom: 10px
+}
+
+.btn-color:hover {
+  background-color: #83B64B;
+  color: black;
+  border: none;
+  margin-bottom: 10px
 }

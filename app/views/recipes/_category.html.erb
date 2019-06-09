@@ -10,7 +10,7 @@
           <div class="pic-wrapper">
             <%= link_to recipe, class:"cat-index-link" do %>
               <%= image_tag recipe.image.variant(resize_to_limit: [500, 500]), class: "rp" %>
-              <span class="category-recipe-tittle"><%= recipe.name %></span>
+              <span class="category-recipe-tittle"><%= recipe.name.titleize %></span>
               <span class='overlay'></span>
             <% end %>
           </div>

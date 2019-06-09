@@ -1,18 +1,24 @@
 .nav-link.active{
-  color: white;
+  color: white !important;
   font-weight: 800;
-  padding-bottom: 3px;}
+  padding-bottom: 3px;
+  border-bottom: solid 1px
+}
 
 .nav-link{
-  font-size: 18px;
+  font-size: 16px;
   padding-left: 0 !important;
   padding-right: 0 !important;
   margin-right: 0.4rem !important;
   margin-left: 0.4rem !important;
+
+  @media only screen and (min-width: 1023px)  {
+    font-size: 18px;
+  }
 }
 
 .nav-link:hover {
-  color: white;
+  color: white !important;
 }
 
 .navbar {
@@ -24,4 +30,6 @@
 .navbar-brand {
   font-size: 25px!important;
   margin-left: 5px; 
+  font-family: 'Roboto', sans-serif;
 }
+
