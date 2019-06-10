@@ -12,7 +12,13 @@ background: #f7f7f7;
   button{
     width: 50%
   }
+  @media screen and (max-width: 980px) {
+    width: 75%;
+    margin-top: 30%;
+    margin-left: 20%;
+  }
 }
 input:focus{
   outline-color:  #83B64B !important;
 }
+
