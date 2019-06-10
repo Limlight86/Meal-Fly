@@ -1,5 +1,6 @@
 <h1 class="title">Your Cookbook</h1>
 <div class="cookbook-wrapper">
+<%if @user_recipes.length > 0%>
   <% @user_recipes.each do |user_recipe| %>
     <%= link_to user_recipe.recipe do %>
       <div class="all">
@@ -56,4 +57,8 @@
       </div>
     <% end %>
   <% end %>
+  <% else %>
+    <h2 class="empty-cookbook">You have no recipes in your Cookbook, search our categories and recipe pages to add to it!</h2>
+    <% end %>
+  
 </div>
