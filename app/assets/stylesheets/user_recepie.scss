@@ -1,5 +1,8 @@
 .title{
   text-align: center;
+  @media screen and (max-width: 1100px){
+    margin-left: 80px;
+  }
 }
 .cookbook-wrapper{
   display: grid;
@@ -9,10 +12,12 @@
 
 .all{
   color: black;
-  padding: 20px;
-  padding-right: 150px;
-  padding-left: 150px;
-  padding-top: 27px;
+  padding-right: 125px;
+  padding-left: 125px;
+  padding-top: 15px;
+  @media screen and (max-width: 1100px){
+   padding-left: 80px;
+  }
 }
 
 a:link{
@@ -23,6 +28,10 @@ a:link{
   display: flex;
   flex-direction: row;
   border: 1px solid black;
+  min-height: 215px;
+  @media screen and (max-width: 1100px){
+    min-height: 190px;
+   }
 }
 
 .image{
@@ -35,22 +44,17 @@ a:link{
 
 .my-btn{
   font-size: 10px;
-  color: red;
-  height: 25px;
-  width: 70px;
+  color: black;
+  height: 20px;
+  width: 60px;
   margin-left: 5px;
   margin-bottom: 5px;
-  background-color: whitesmoke;
-  opacity: 0.8;
+  background-color: #83B64B;
+  opacity: 0.9;
   border: 1px solid black;
   outline: none;
   border-radius: 20px;
   z-index: 10;
-}
-
-.my-btn:hover{
-  transition: .1s;
-  width: 100px;
 }
 
 .my-btn:focus{
@@ -65,6 +69,7 @@ a:link{
   padding-right: 10px;
   padding-left: 10px;
   padding-top: 10px;
+  background-color: white;
 }
 
 .name-category{
@@ -74,7 +79,10 @@ a:link{
 }
 
 .name{
-  font-size: 25px;
+  font-size: 24px;
+  @media screen and (max-width: 1100px){
+    font-size: 20px;
+   }
 }
 .time-difficulty{
   display: flex;
@@ -88,6 +96,10 @@ a:link{
   justify-content: space-between;
   width: 100%;
   padding: 10px;
+  @media screen and (max-width: 1100px){
+    font-size: 13px;
+    padding: 5px;
+  }
 }
 
 .checked{
@@ -96,6 +108,9 @@ a:link{
 
 .fa-star{
   font-size: 20px;
+  @media screen and (max-width: 1100px){
+    font-size: 14px;
+  }
 
   text-shadow:
 		-1px -1px 0 #000,
@@ -103,4 +118,10 @@ a:link{
 		-1px 1px 0 #000,
     1px 1px 0 #000;
   margin: 3px;
+}
+
+#all-cats{
+  @media screen and (max-width: 1100px) {
+    font-size: 14px;
+  }
 }

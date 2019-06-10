@@ -1,4 +1,4 @@
-<h1 class="title">Your Cookbook!</h1>
+<h1 class="title">Your Cookbook</h1>
 <div class="cookbook-wrapper">
   <% @user_recipes.each do |user_recipe| %>
     <%= link_to user_recipe.recipe do %>
@@ -11,8 +11,8 @@
           <div class="info">
             <div>
               <div class="name-category">
-                <strong class="name"><%= user_recipe.recipe.name %></strong>
-                <span>
+                <strong class="name"><%= user_recipe.recipe.name.titleize %></strong>
+                <span id="all-cats">
                   <strong class="category">Categories:</strong> <%= user_recipe.recipe.categories.pluck(:name).join(", ").titlecase %>
                 </span>
               </div>
