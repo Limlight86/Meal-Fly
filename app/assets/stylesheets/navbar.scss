@@ -1,17 +1,34 @@
 .nav-link.active{
-  color: green !important;
-  border-bottom: 1px solid green;
+  color: white !important;
+  font-weight: 800;
   padding-bottom: 3px;
+  border-bottom: solid 1px
 }
 
 .nav-link{
+  font-size: 16px;
   padding-left: 0 !important;
   padding-right: 0 !important;
   margin-right: 0.4rem !important;
   margin-left: 0.4rem !important;
+
+  @media only screen and (min-width: 1023px)  {
+    font-size: 18px;
+  }
+}
+
+.nav-link:hover {
+  color: white !important;
 }
 
 .navbar {
   padding-top: 0;
   padding-bottom: 0;
+  background: #82b74b;
+}
+
+.navbar-brand {
+  font-size: 25px!important;
+  margin-left: 5px; 
+  font-family: 'Roboto', sans-serif;
 }

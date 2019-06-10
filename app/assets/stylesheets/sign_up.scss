@@ -1,18 +1,20 @@
-.sign-up-page{
+.sign-up-page {
   background: #f7f7f7;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-  padding: 30px;
+  padding: 10px;
   height: 500px;
   width: 50%;
-  margin-top: 10px;
+  margin-top: 15%;
   margin-left: 25%;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-input:focus{
-  outline-color: rgb 146, 186, 97 !important;
+
+input:focus {
+  outline-color: #83B64B !important;
 }
+
 form-group:a {
   color: rgb 146, 186, 97;
 }

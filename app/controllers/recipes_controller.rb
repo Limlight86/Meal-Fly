@@ -10,7 +10,7 @@ class RecipesController < ApplicationController
       @featured_category  = Category.all.sample
       @categories         = Category.all
     end
-    @categories = @categories.where.not(id: @featured_category.id)
+    @categories = @categories.where.not(id: @featured_category&.id)
   end
 
   def show

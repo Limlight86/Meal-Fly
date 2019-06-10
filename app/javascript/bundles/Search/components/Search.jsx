@@ -27,11 +27,11 @@ class Search extends Component {
           onChange={this.handleChange}
         />
         { results.length > 0 &&
-          <ul class="list-group" style={{position: 'absolute', zIndex: 10}}>
+          <ul className="list-group" style={{position: 'absolute', zIndex: 10}}>
             {
               results.map((result, i) => {
                 return(
-                  <li class="list-group-item" key={i}>
+                  <li className="list-group-item" key={i}>
                     <a href={result.location}>
                       { result.name }
                       <span className={badgeClasses[result.type]}>{result.type}</span>

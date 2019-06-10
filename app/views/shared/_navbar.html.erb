@@ -1,8 +1,8 @@
-<nav class="navbar navbar-light bg-light navbar-expand-lg fixed-top">
+<nav class="navbar navbar-light navbar-expand-lg fixed-top">
   <%= link_to root_url do %>
     <%= image_tag "Meal-Fly.png", width: 60 %>
   <% end %>
-  <%= link_to "Meal Fly", root_url, class: "navbar-brand" %>
+  <%= link_to "<b>Meal</b> <i>Fly</i>".html_safe, root_url, class: "navbar-brand" %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -11,16 +11,16 @@
       <ul class="navbar-nav">
         <% if current_user.admin? %>
           <li class='nav-item'>
-            <%= link_to "All Recipes", admin_recipes_url, class: "nav-link #{'active' if current_page?(admin_recipes_url)}"%>
+            <%= link_to "ALL RECIPES", admin_recipes_url, class: "nav-link #{'active' if current_page?(admin_recipes_url)}"%>
           </li>
           <li class='nav-item'>
-            <%= link_to "New Recipe", new_admin_recipe_url, class: "nav-link #{'active' if current_page?(new_admin_recipe_url)}"%>
+            <%= link_to "NEW RECIPE", new_admin_recipe_url, class: "nav-link #{'active' if current_page?(new_admin_recipe_url)}"%>
           </li>
           <li class='nav-item'>
-            <%= link_to "All Categories", admin_categories_url, class: "nav-link #{'active' if current_page?(admin_categories_url)}"%>
+            <%= link_to "ALL CATEGORIES", admin_categories_url, class: "nav-link #{'active' if current_page?(admin_categories_url)}"%>
           </li>
           <li class='nav-item'>
-            <%= link_to "New Category", new_admin_category_url, class: "nav-link #{'active' if current_page?(new_admin_category_url)}" %>
+            <%= link_to "NEW CATEGORY", new_admin_category_url, class: "nav-link #{'active' if current_page?(new_admin_category_url)}" %>
           </li>
         <% else %>
           <li class='nav-item'>

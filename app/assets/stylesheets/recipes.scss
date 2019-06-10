@@ -1,6 +1,6 @@
 body {
-  font-family: 'Nunito Sans', sans-serif;
-  background-image: linear-gradient(to bottom, #8ed47b, #a2cf60, #b9c844, #d1be2a, #ebb212);
+  font-family: 'Roboto', sans-serif;
+  background: rgb(248, 236, 232);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -10,7 +10,9 @@ body {
   border: 1px solid black;
 }
 
-.admin_table, .admin_table th, .admin_table td {
+.admin_table,
+.admin_table th,
+.admin_table td {
   border: 1px solid black;
 }
 
@@ -34,36 +36,36 @@ trix-toolbar .trix-button-group {
 }
 
 trix-toolbar .trix-button {
-    position: relative;
-    float: left;
-    color: rgba(0, 0, 0, 0.6);
-    font-size: 1em;
-    font-weight: 600;
-    white-space: nowrap;
-    padding: 0 0.5em;
-    margin: 0;
-    border-color: black !important;
-    border-bottom: none;
-    border-radius: 0;
-    background: white;
+  position: relative;
+  float: left;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 1em;
+  font-weight: 600;
+  white-space: nowrap;
+  padding: 0 0.5em;
+  margin: 0;
+  border-color: black !important;
+  border-bottom: none;
+  border-radius: 0;
+  background: white;
 }
 
-.fa-star{
+.fa-star {
   font-size: 30px;
   color: white;
   text-shadow:
-		-1px -1px 0 #000,
-		1px -1px 0 #000,
-		-1px 1px 0 #000,
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
     1px 1px 0 #000;
   margin: 3px;
 }
 
-.fa-star.small{
+.fa-star.small {
   font-size: 14px;
 }
 
-.fa-star.clickable{
+.fa-star.clickable {
   cursor: pointer;
 }
 
@@ -71,26 +73,26 @@ trix-toolbar .trix-button {
   color: orange;
 }
 
-#recipe-index-head{
+#recipe-index-head {
   margin: 20px 0 20px 0;
   text-align: center;
 }
 
-#category-show-head{
+#category-show-head {
   margin: 20px 0 20px 0;
   text-align: center;
 }
 
-#category-index-head{
+#category-index-head {
   margin: 20px 0 20px 0;
   text-align: center;
 }
 
-#category-show-list{
+#category-show-list {
   margin-bottom: 20px;
 }
 
-#new-recipe-head{
+#new-recipe-head {
   text-align: center;
   margin-top: 20px
 }
@@ -104,29 +106,35 @@ trix-toolbar .trix-button {
   height: 50px;
 }
 
-.recipe-link{
+.recipe-link {
   color: rgb(26, 164, 26);
 }
 
-.recipe-link:hover{
+.recipe-link:hover {
   text-decoration: underline;
 }
 
 .recipe-page {
   margin: 20px;
   padding: 20px;
+  padding-left: 60px;
   background-color: rgba(255, 255, 255, 0.96);
+
+  @media screen and (max-width: 980px) {
+    margin: 0px;
+    width: 775px;
+  }
 }
 
 .cuisine {
   padding-top: 50px;
 }
 
-.cookbook{
+.cookbook {
   float: right;
 }
 
-.recipe_image{
+.recipe_image {
   object-fit: cover;
   width: 100px;
   height: 100px;
@@ -141,6 +149,20 @@ trix-toolbar .trix-button {
   float: left;
   width: 50%;
   padding-top: 25px;
+
+  @media screen and (max-width: 1024px) {
+    width: 51%;
+    padding-top: 0;
+    margin-bottom: 10px;
+    margin-left: 120px
+  }
+
+  @media screen and (max-width: 980px) {
+    width: 51%;
+    padding-top: 0;
+    margin-bottom: 10px;
+    margin-left: 10px
+  }
 }
 
 .recipe-row:after {
@@ -150,36 +172,25 @@ trix-toolbar .trix-button {
 }
 
 .show_video {
+  margin-top: 14px;
   height: 500px;
   padding: 10px;
-  margin-bottom: 25px;
+  outline: 0
 }
 
 .serving-size {
   font-size: 18px;
   font-style: italic;
+  margin-bottom: 35px
 }
 
-/*.featured_image {
-  padding: 50px;
-  background-color: green;
-  transition: transform .2s; 
-  width: 200px;
-  height: 200px;
-  margin: 0 auto;
-}
-
-.featured_image:hover{
-  transform: scale(1.5);
-}*/
-
-.nutrition li{
+.nutrition li {
   padding: 0;
   list-style-type: none;
   font-size: 16px;
 }
 
-.instructions{
+.instructions {
   padding: 10px;
   text-align: left;
 }
@@ -189,19 +200,66 @@ trix-toolbar .trix-button {
 }
 
 .nutrition-disclaimer {
-  
+  margin-top: 35px;
   font-size: 12px;
 }
 
 .rating {
-   float: right;
+  float: right;
 }
 
-.container{
+.container {
   margin-top: 20px;
   margin-bottom: 100px;
+
+  @media screen and (max-width: 980px) {
+    margin-left: 80px
+  }
 }
 
-body{
-  padding-top: 60px
+body {
+  padding-top: 60px;
+  background-color: #f8ece8
+}
+
+.recipe-btn {
+  border-radius: 20px;
+  background-color: #a2cf60;
+  margin-right: 40px
+}
+
+.recipe-btn:focus {
+  outline: none;
+}
+
+.card-body {
+  min-height: 154px;
+  margin-bottom: 10px
+}
+
+.card {
+  margin-bottom: 10px;
+
+}
+
+#overall-rating {
+  margin-bottom: 0;
+}
+
+.nf {
+  margin-bottom: 10px
+}
+
+.btn-color {
+  background-color: #83B64B;
+  color: white;
+  border: none;
+  margin-bottom: 10px
+}
+
+.btn-color:hover {
+  background-color: #83B64B;
+  color: black;
+  border: none;
+  margin-bottom: 10px
 }

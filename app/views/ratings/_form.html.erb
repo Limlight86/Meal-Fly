@@ -1,8 +1,9 @@
 <div id="stars-container" data-rating="<%= rating.score%>" style="display: flex;">
+  <span>Rate this Recipe &nbsp; : &nbsp;&nbsp;</span>
   <% (1..5).each do |n|%>
     <%= form_with(model: [recipe, rating], local: true) do |form| %>
       <%= form.hidden_field :score, value: n %>
-      <span
+      <span 
         data-stars="<%= n %>"
         class="fa fa-star clickable <%= 'checked' if rating.score >= n %>"
         onclick="this.closest('form').submit()"
