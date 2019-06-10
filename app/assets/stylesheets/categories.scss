@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-#category-show-contents{
+#category-show-contents {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
@@ -11,13 +11,14 @@
   grid-row-gap: 5px;
 }
 
-@media (min-width: 1200px){
+@media (min-width: 1200px) {
   .container {
     max-width: 1200px;
   }
 }
-  @media screen and (max-width: 980px) {
-    .category_page{
+
+@media screen and (max-width: 980px) {
+  .category_page {
     width: 120%
-}
+  }
 }

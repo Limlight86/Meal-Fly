@@ -1,40 +1,44 @@
-.title{
+.title {
   text-align: center;
-  @media screen and (max-width: 1100px){
+
+  @media screen and (max-width: 1100px) {
     margin-left: 80px;
   }
 }
-.cookbook-wrapper{
+
+.cookbook-wrapper {
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 10px;
 }
 
-.all{
+.all {
   color: black;
   padding-right: 125px;
   padding-left: 125px;
   padding-top: 15px;
-  @media screen and (max-width: 1100px){
-   padding-left: 80px;
+
+  @media screen and (max-width: 1100px) {
+    padding-left: 80px;
   }
 }
 
-a:link{
+a:link {
   text-decoration: none;
 }
 
-.recepie{
+.recepie {
   display: flex;
   flex-direction: row;
   border: 1px solid black;
   min-height: 215px;
-  @media screen and (max-width: 1100px){
+
+  @media screen and (max-width: 1100px) {
     min-height: 190px;
-   }
+  }
 }
 
-.image{
+.image {
   display: flex;
   width: 350px;
   background-color: gray;
@@ -42,7 +46,7 @@ a:link{
 
 }
 
-.my-btn{
+.my-btn {
   font-size: 10px;
   color: black;
   height: 20px;
@@ -57,11 +61,11 @@ a:link{
   z-index: 10;
 }
 
-.my-btn:focus{
+.my-btn:focus {
   outline: none;
 }
 
-.info{
+.info {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -72,60 +76,63 @@ a:link{
   background-color: white;
 }
 
-.name-category{
+.name-category {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-.name{
+.name {
   font-size: 24px;
-  @media screen and (max-width: 1100px){
+
+  @media screen and (max-width: 1100px) {
     font-size: 20px;
-   }
+  }
 }
-.time-difficulty{
+
+.time-difficulty {
   display: flex;
   justify-content: space-between;
   margin-top: 25px;
 }
 
-.nutrients{
+.nutrients {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
   padding: 10px;
-  @media screen and (max-width: 1100px){
+
+  @media screen and (max-width: 1100px) {
     font-size: 13px;
     padding: 5px;
   }
 }
 
-.checked{
+.checked {
   color: orange;
 }
 
-.fa-star{
+.fa-star {
   font-size: 20px;
-  @media screen and (max-width: 1100px){
+
+  @media screen and (max-width: 1100px) {
     font-size: 14px;
   }
 
-  text-shadow:
-		-1px -1px 0 #000,
-		1px -1px 0 #000,
-		-1px 1px 0 #000,
-    1px 1px 0 #000;
+  text-shadow: -1px -1px 0 #000,
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000;
   margin: 3px;
 }
 
-.empty-cookbook{
+.empty-cookbook {
   margin-top: 200px;
   text-align: center;
 }
 
-#all-cats{
+#all-cats {
   @media screen and (max-width: 1100px) {
     font-size: 14px;
   }

@@ -1,64 +1,64 @@
 <h1 class="title">Your Cookbook</h1>
 <div class="cookbook-wrapper">
-<%if @user_recipes.length > 0%>
-  <% @user_recipes.each do |user_recipe| %>
-    <%= link_to user_recipe.recipe do %>
-      <div class="all">
-        <div class="recepie">
-          <div class="image" style="background-image: url('<%= rails_blob_url(user_recipe.recipe.image) %>'); background-size: cover; background-position: center">
-            <%= react_component 'UserRecipe', props: { recipe: user_recipe.recipe, inCookbook: true, :className => 'my-btn', inUserRecipe: true } %>
-          </div>
-
-          <div class="info">
-            <div>
-              <div class="name-category">
-                <strong class="name"><%= user_recipe.recipe.name.titleize %></strong>
-                <span id="all-cats">
-                  <strong class="category">Categories:</strong> <%= user_recipe.recipe.categories.pluck(:name).join(", ").titlecase %>
-                </span>
-              </div>
-
-              <span>
-                <strong>Rating: </strong>
-
-                <% if user_recipe.recipe.ratings.average(:score) %>
-                <% user_recipe.recipe.ratings.average(:score).round.times do %>
-                  <span class="fa fa-star checked"></span>
-                <% end %>
-                <% (5 - user_recipe.recipe.ratings.average(:score).round).times do %>
-                  <span class="fa fa-star"></span>
-                <% end %>
-                <% else %>
-                No reviews posted, be the first!
-                <% end %>
-              </span>
-
-              <div class="time-difficulty">
-                <span><strong>Cook Time: </strong><%= user_recipe.recipe.cook_time %>min</span>
-                <span><strong>Difficulty:</strong> <%= user_recipe.recipe.difficulty.capitalize%></span>
-              </div>
+  <%if @user_recipes.length > 0%>
+    <% @user_recipes.each do |user_recipe| %>
+      <%= link_to user_recipe.recipe do %>
+        <div class="all">
+          <div class="recepie">
+            <div class="image" style="background-image: url('<%= rails_blob_url(user_recipe.recipe.image) %>'); background-size: cover; background-position: center">
+              <%= react_component 'UserRecipe', props: { recipe: user_recipe.recipe, inCookbook: true, :className => 'my-btn', inUserRecipe: true } %>
             </div>
 
-            <span class="nutrients">
-              <span><strong>Calories:</strong> <%= user_recipe.recipe.calories %></span>
-              <strong>&bull;</strong>
-              <span><strong>Carbs:</strong>    <%= user_recipe.recipe.carbs %></span>
-              <strong>&bull;</strong>
-              <span><strong>Proteins:</strong>    <%= user_recipe.recipe.protein %></span>
-              <strong>&bull;</strong>
-              <span><strong>Fats:</strong>    <%= user_recipe.recipe.fat %></span>
-              <strong>&bull;</strong>
-              <span><strong>Sugar:</strong>    <%= user_recipe.recipe.sugar %></span>
-              <strong>&bull;</strong>
-              <span><strong>Fibers:</strong>    <%= user_recipe.recipe.fiber %></span>
-            </span>
+            <div class="info">
+              <div>
+                <div class="name-category">
+                  <strong class="name"><%= user_recipe.recipe.name.titleize %></strong>
+                  <span id="all-cats">
+                    <strong class="category">Categories:</strong> <%= user_recipe.recipe.categories.pluck(:name).join(", ").titlecase %>
+                  </span>
+                </div>
+
+                <span>
+                  <strong>Rating: </strong>
+
+                  <% if user_recipe.recipe.ratings.average(:score) %>
+                  <% user_recipe.recipe.ratings.average(:score).round.times do %>
+                    <span class="fa fa-star checked"></span>
+                  <% end %>
+                  <% (5 - user_recipe.recipe.ratings.average(:score).round).times do %>
+                    <span class="fa fa-star"></span>
+                  <% end %>
+                  <% else %>
+                    No reviews posted, be the first!
+                  <% end %>
+                </span>
+
+                <div class="time-difficulty">
+                  <span><strong>Cook Time: </strong><%= user_recipe.recipe.cook_time %>min</span>
+                  <span><strong>Difficulty:</strong> <%= user_recipe.recipe.difficulty.capitalize%></span>
+                </div>
+              </div>
+
+              <span class="nutrients">
+                <span><strong>Calories:</strong> <%= user_recipe.recipe.calories %></span>
+                <strong>&bull;</strong>
+                <span><strong>Carbs:</strong>    <%= user_recipe.recipe.carbs %></span>
+                <strong>&bull;</strong>
+                <span><strong>Proteins:</strong>    <%= user_recipe.recipe.protein %></span>
+                <strong>&bull;</strong>
+                <span><strong>Fats:</strong>    <%= user_recipe.recipe.fat %></span>
+                <strong>&bull;</strong>
+                <span><strong>Sugar:</strong>    <%= user_recipe.recipe.sugar %></span>
+                <strong>&bull;</strong>
+                <span><strong>Fibers:</strong>    <%= user_recipe.recipe.fiber %></span>
+              </span>
+            </div>
           </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
+    <% else %>
+      <h2 class="empty-cookbook">You have no recipes in your Cookbook, search our categories and recipe pages to add to it!</h2>
   <% end %>
-  <% else %>
-    <h2 class="empty-cookbook">You have no recipes in your Cookbook, search our categories and recipe pages to add to it!</h2>
-    <% end %>
   
 </div>
