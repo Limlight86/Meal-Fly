@@ -4,7 +4,7 @@
     No reviews posted, be the first!
   <% else %>
     <p id="overall-rating">
-        <% case @recipe.ratings.average(:score) %>
+        <% case @recipe.ratings.average(:score).to_i %>
         <% when  1 %>
           <span class="fa fa-star checked"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span>
         <% when  2 %>
