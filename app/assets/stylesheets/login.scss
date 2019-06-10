@@ -4,12 +4,15 @@ background: #f7f7f7;
   padding: 30px;
   min-height: 500px;
   width: 50%;
-  margin-top: 15%;
-  margin-left: 25%;
+  margin-top: 10%;
+  margin-left: 22%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  button{
+    width: 50%
+  }
 }
 input:focus{
-  outline-color: green !important;
+  outline-color:  #83B64B !important;
 }

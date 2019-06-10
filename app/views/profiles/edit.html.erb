@@ -1,22 +1,22 @@
 <div class="profile">
 <% if @profile.persisted? %>
   <h1>Update Your Profile</h1>
-  <p> Choose your favorite recipes and categories here.</p>
+  <p> Set your culinary skill and favorite categories and we will customize your home page with recipes you will like! </p>
 <% else %>
   <h1>Create Your Profile</h1>
 <% end %>
 
 <%= form_with(model: @profile, url: profile_path, method: :put) do |form| %>
   <div>
-    <%= form.label :skill_level %>
+    <%= form.label :skill_level, class:"label_level" %>
     <%= form.select :skill_level,
-        options_for_select(Profile.skill_levels.map {|k, v| [k.humanize.capitalize, k]}, @profile.skill_level) %>
+        options_for_select(Profile.skill_levels.map {|k, v| [k.humanize.capitalize, k]}, @profile.skill_level)%>
   </div>
   <h3>Categories</h3>
   <p>Please pick your favorite categories below<p>
   <p>
     <% @categories.each do |category| %>
-      <p><%= form.label category.name %>
+      <p class="cat-choice"><%= form.label category.name %>
       <%= form.check_box "categories[#{category.id}]",
           checked: @profile.categories.include?(category) %></p>
     <% end %>
